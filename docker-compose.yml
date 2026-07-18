@@ -1,0 +1,30 @@
+services:
+  api:
+    image: exekaliburr-api
+    container_name: exekaliburr-api
+    build:
+      context: api
+      dockerfile: Dockerfile
+    security_opt:
+      - no-new-privileges:true
+
+  front:
+    image: exekaliburr-front
+    container_name: exekaliburr-front
+    build:
+      context: front
+      dockerfile: Dockerfile
+    security_opt:
+      - no-new-privileges:true
+
+  nginx:
+    image: exekaliburr-nginx
+    container_name: exekaliburr-nginx
+    build:
+      context: nginx
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    security_opt:
+      - no-new-privileges:true
