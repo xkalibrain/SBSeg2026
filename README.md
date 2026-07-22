@@ -27,27 +27,44 @@ Por fim, toda a aplicação é distribuída utilizando Docker, garantindo um amb
 
 Você pode conferir mais sobre a [API](api/README.md) e o [Front-end](front/README.md).
 
-## Arquitetura
+## Arquitetura - Web xKaliBurr
 
-                 ┌─────────────────────┐
-                 │   Front-end Web     │
-                 │ (Interface Gráfica) │
-                 └──────────┬──────────┘
-                            │ HTTP/REST
-                            ▼
-                 ┌─────────────────────┐
-                 │        API          │
-                 │ Orquestra Execução  │
-                 └──────────┬──────────┘
-                            │
-        ┌───────────────────┼───────────────────┐
-        ▼                   ▼                   ▼
-   Nmap               WhatWeb             DNSRecon
-        ▼                   ▼                   ▼
-      Gobuster          cURL              Outras Ferramentas
-                            │
-                            ▼
-                  Relatório Consolidado
+```text
+                 ┌─────────────────────────┐
+                 │      Front-end Web      │
+                 │   Interface Gráfica     │
+                 └────────────┬────────────┘
+                              │
+                         HTTP / REST
+                              │
+                              ▼
+                 ┌─────────────────────────┐
+                 │           API           │
+                 │  Orquestra as análises  │
+                 └────────────┬────────────┘
+                              │
+        ┌─────────────────────┼─────────────────────┐
+        │                     │                     │
+        ▼                     ▼                     ▼
+   ┌──────────┐         ┌──────────┐         ┌──────────┐
+   │  Nmap    │         │ WhatWeb  │         │ DNSRecon │
+   └──────────┘         └──────────┘         └──────────┘
+        │                     │                     │
+        └─────────────┬───────┴─────────────┬───────┘
+                      │                     │
+                      ▼                     ▼
+               ┌────────────┐       ┌────────────┐
+               │ Gobuster   │       │    cURL    │
+               └────────────┘       └────────────┘
+                      │
+                      ▼
+          ┌─────────────────────────┐
+          │ Relatório Consolidado   │
+          │      (.txt / JSON)      │
+          └─────────────────────────┘
+```
+
+Durante a execução, a API coordena a execução das ferramentas de reconhecimento, consolida todas as saídas obtidas e gera um relatório único contendo as evidências coletadas durante a análise da superfície de ataque do alvo.
 
 ### Dependências
 
@@ -70,7 +87,8 @@ Para executar a ferramenta, você precisa ter o Docker e o Docker Compose instal
 * Linux: Para distribuições Linux, disponibilizamos um script de instalação que automatiza toda a configuração inicial: `./setup.sh` (Script testado no Ubuntu 22.04) para facilitar sua instalação. Caso vá rodar localmente (recomendado) não precisa alterar nenhuma variável de ambiente padrão.
 
 Para fazer o setup manualmente, antes de executar a ferramenta você deve criar um arquivo `.env` nas pastas `./front/` e `./api/`, pode criá-lo apenas como uma cópia dos arquivos `.env.template` que já está configurado para rodar a ferramenta localmente.
-<br> Além disso, com as variáveis devidamente configuradas você precisa ainda criar um outro arquivo `.env` na raiz do projeto com a porta da interface web configurada. Para simplificar, você pode apenas copiar o arquivo `./front/.env` na pasta raiz.
+
+Além disso, com as variáveis devidamente configuradas você precisa ainda criar um outro arquivo `.env` na raiz do projeto com a porta da interface web configurada. Para simplificar, você pode apenas copiar o arquivo `./front/.env` na pasta raiz.
 
 Por fim, para executar a ferramenta basta rodar o comando:
 
