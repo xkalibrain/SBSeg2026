@@ -183,7 +183,6 @@ xKaliBrain/
 ├── reports/            # Relatórios OSINT de exemplo
 ├── results/            # Resultados experimentais
 ├── scripts/            # Scripts auxiliares
-├── web/                # Web xKaliBurr
 ├── README.md
 ├── requirements.txt
 └── LICENSE
@@ -260,41 +259,6 @@ Entre elas:
 
 Essas ferramentas são executadas automaticamente pela plataforma Web xKaliBurr durante a geração dos relatórios utilizados posteriormente pelo xKaliBrain.
 
-# Estrutura Geral do Projeto
-
-Após a instalação, o repositório possui uma organização semelhante à apresentada abaixo.
-
-```text
-xKaliBrain/
-
-├── benchmark/
-│   ├── scripts/
-│   ├── metrics/
-│   └── results/
-│
-├── dataset/
-│   ├── reports/
-│   ├── labels/
-│   └── metadata/
-│
-├── prompts/
-│
-├── inference/
-│
-├── models/
-│
-├── docs/
-│
-├── examples/
-│
-├── web/
-│
-├── requirements.txt
-│
-└── README.md
-```
-
-Cada diretório foi organizado para facilitar tanto a utilização da plataforma quanto a reprodução dos experimentos científicos.
 
 ---
 
@@ -305,13 +269,13 @@ Cada diretório foi organizado para facilitar tanto a utilização da plataforma
 Clone o repositório oficial.
 
 ```bash
-git clone https://github.com/xKaliBurr/xKaliBrain.git
+git clone https://github.com/xkalibrain/SBSeg2026.git
 ```
 
 Entre no diretório.
 
 ```bash
-cd xKaliBrain
+cd SBSeg2026
 ```
 
 ---
@@ -380,31 +344,46 @@ Ao término da instalação todas as bibliotecas necessárias estarão disponív
 
 # Instalando o Web xKaliBurr
 
-O agente utiliza como entrada relatórios produzidos pelo Web xKaliBurr.
+O xKaliBrain utiliza como entrada relatórios produzidos pela plataforma **Web xKaliBurr**.
 
-Caso deseje reproduzir integralmente o fluxo apresentado no artigo, execute também a instalação da plataforma.
+Caso deseje reproduzir integralmente o fluxo experimental apresentado no artigo, é necessário instalar e executar também o Web xKaliBurr.
 
-Entre no diretório.
-
-```bash
-cd web
-```
-
-Inicie os containers.
+Entre no diretório do projeto:
 
 ```bash
-docker compose up -d
+cd SBSeg2026
 ```
 
-Aguarde a inicialização completa.
+Conceda permissão de execução ao script de inicialização (caso necessário):
 
-Verifique:
+```bash
+chmod +x run.sh
+```
+
+Execute o script principal:
+
+```bash
+./run.sh
+```
+
+O script irá:
+
+- iniciar automaticamente os containers Docker necessários;
+- configurar o ambiente da aplicação;
+- inicializar os serviços do Web xKaliBurr;
+- disponibilizar a interface Web para utilização em seu [local host](http://localhost/).
+
+Aguarde a conclusão da inicialização.
+
+Para verificar se todos os containers estão em execução, utilize:
 
 ```bash
 docker ps
 ```
 
-Todos os serviços deverão estar em execução.
+A saída deverá listar todos os serviços do Web xKaliBurr com o status **Up**.
+
+Após essa etapa, a plataforma estará pronta para realizar explorações OSINT e gerar os relatórios utilizados pelo xKaliBrain durante a etapa de interpretação.
 
 ---
 
