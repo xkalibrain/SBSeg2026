@@ -1,0 +1,153 @@
+{
+    "[URL_ANONIMIZADA]": {
+        "ResoluÃ§Ã£o DNS": {
+            "[URL_ANONIMIZADA]": "[IP_ANONIMIZADO]"
+        },
+        "WhatWeb Analysis": {
+            "[URL_ANONIMIZADA]": {
+                "code": "301",
+                "status": "Moved Permanently",
+                "tecnologias": [
+                    "Apache[2.2.22]",
+                    "Country[BRAZIL][BR]",
+                    "HTTPServer[Debian Linux][Apache/2.2.22 (Debian)]",
+                    "IP[[IP_ANONIMIZADO]]",
+                    "RedirectLocation[[URL_ANONIMIZADA]",
+                    "Title[301 Moved Permanently]"
+                ]
+            },
+            "ip_principal": "[IP_ANONIMIZADO]"
+        },
+        "WhoIs": {
+            "Date": "Mon, 08 Sep 2025 19:18:22 GMT",
+            "Server": "Apache/2.2.22 (Debian)",
+            "Last-Modified": "Wed, 26 Oct 2016 17:37:44 GMT",
+            "ETag": "\"44b59d-18b-53fc815204a00\"",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "395",
+            "Vary": "Accept-Encoding",
+            "Content-Type": "text/html",
+            "X-Pad": "avoid browser bug"
+        },
+        "WhatWeb Detailed Analysis": {
+            "summary": {
+                "url": "[URL_ANONIMIZADA]",
+                "codigo": "200",
+                "status": "OK",
+                "title": "CEFAC",
+                "ip": "[IP_ANONIMIZADO]",
+                "country": "BRAZIL",
+                "sigla": "BR"
+            },
+            "plugins": {
+                "Apache": {
+                    "Version": "2.2.22 (from HTTP Server Header)",
+                    "Google Dorks": "(3)",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "HTTPServer": {
+                    "OS": "Debian Linux",
+                    "String": "Apache/2.2.22 (Debian) (from server string)"
+                },
+                "RedirectLocation": {
+                    "String": "[URL_ANONIMIZADA] (from location)"
+                }
+            },
+            "http_headers": {
+                "Status-Line": "HTTP/1.1 301 Moved Permanently",
+                "Date": "Mon, 08 Sep 2025 19:18:28 GMT",
+                "Server": [
+                    "Apache/2.2.22 (Debian)",
+                    "Apache/2.2.22 (Debian)"
+                ],
+                "Location": "[URL_ANONIMIZADA]",
+                "Vary": "Accept-Encoding",
+                "Content-Encoding": "gzip",
+                "Content-Length": "248",
+                "Connection": "close",
+                "Content-Type": "text/html; charset=iso-8859-1"
+            },
+            "ferramentas": [
+                "Apache[2.2.22]",
+                "HTTPServer[Debian Linux][Apache/2.2.22 (Debian)]",
+                "Meta-Refresh-Redirect[[URL_ANONIMIZADA]"
+            ]
+        },
+        "NMAP": {
+            "target": "www2.[TERMO_SENSIVEL].br",
+            "ip": "[IP_ANONIMIZADO]",
+            "status": "up",
+            "ports": [
+                {
+                    "port": 20,
+                    "protocol": "tcp",
+                    "state": "closed",
+                    "service": "ftp-data",
+                    "version": "21/tcp   closed ftp"
+                },
+                {
+                    "port": 80,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "http",
+                    "version": "Apache httpd 2.2.22 ((Debian))"
+                },
+                {
+                    "port": 9102,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "jetdirect?",
+                    "version": "Service detection performed. Please report any incorrect results at [URL_ANONIMIZADA] ."
+                },
+                {
+                    "port": 80,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "http",
+                    "version": "Apache httpd 2.2.22 ((Debian))"
+                }
+            ],
+            "os_info": {}
+        },
+        "GoBuster": [
+            {
+                "diretorio": "/site",
+                "status": 301,
+                "size": 319,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/portal",
+                "status": 301,
+                "size": 321,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/agenda",
+                "status": 301,
+                "size": 321,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            }
+        ],
+        "DNSRecon": {
+            "alvo": "[URL_ANONIMIZADA]",
+            "dnssec_ativo": false,
+            "registros": [
+                {
+                    "tipo": "A",
+                    "dominio": "[URL_ANONIMIZADA]",
+                    "valor": "[IP_ANONIMIZADO]"
+                }
+            ],
+            "reverso": [
+                {
+                    "arpa": "[IP_ANONIMIZADO].in-addr.arpa",
+                    "dominio": "www2.[TERMO_SENSIVEL].br"
+                }
+            ],
+            "mx_info": "[URL_ANONIMIZADA] has no MX record",
+            "ns_info": "[URL_ANONIMIZADA] has no NS record",
+            "subdominios_encontrados": 0
+        }
+    }
+}

@@ -1,0 +1,325 @@
+{
+    "[URL_ANONIMIZADA]": {
+        "ResoluÃ§Ã£o DNS": {
+            "[URL_ANONIMIZADA]": "[IP_ANONIMIZADO]"
+        },
+        "WhatWeb Analysis": {
+            "[URL_ANONIMIZADA]": {
+                "code": "200",
+                "status": "OK",
+                "tecnologias": [
+                    "Apache",
+                    "Bootstrap[1.1,4.9.6]",
+                    "Country[BRAZIL][BR]",
+                    "Email[[EMAIL_ANONIMIZADO]]",
+                    "HTML5",
+                    "HTTPServer[Apache]",
+                    "IP[[IP_ANONIMIZADO]]",
+                    "JQuery[1.12.4]",
+                    "MetaGenerator[WordPress 4.9.6]",
+                    "Open-Graph-Protocol[website]",
+                    "Script[application/ld+json,text/javascript]",
+                    "Title[InÃ­cio - Corrida da Universidade - Dia 27/10/18 no Campus do Pici â€“ [TERMO_SENSIVEL]]",
+                    "UncommonHeaders[link]",
+                    "WordPress[4.9.6]"
+                ]
+            },
+            "ip_principal": "[IP_ANONIMIZADO]"
+        },
+        "WhoIs": {
+            "Date": "Wed, 10 Sep 2025 12:28:14 GMT",
+            "Server": "Apache",
+            "Link": "<[URL_ANONIMIZADA] rel=shortlink",
+            "Vary": "Accept-Encoding",
+            "Content-Type": "text/html; charset=UTF-8"
+        },
+        "WhatWeb Detailed Analysis": {
+            "summary": {
+                "url": "[URL_ANONIMIZADA]",
+                "codigo": "200",
+                "status": "OK",
+                "title": "InÃ­cio - Corrida da Universidade - Dia 27/10/18 no Campus do Pici â€“ [TERMO_SENSIVEL]",
+                "ip": "[IP_ANONIMIZADO]",
+                "country": "BRAZIL",
+                "sigla": "BR"
+            },
+            "plugins": {
+                "Apache": {
+                    "Google Dorks": "(3)",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "Bootstrap": {
+                    "Version": "4.9.6",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "Email": {
+                    "syntactically invalid email addresses from mailto": "link",
+                    "mailto": "to catch anti-spam email addresses, eg. bob at",
+                    "expression from \n\thttp": "//[URL_ANONIMIZADA] for valid",
+                    "String": "[EMAIL_ANONIMIZADO]"
+                },
+                "HTML5": {},
+                "HTTPServer": {
+                    "String": "Apache (from server string)"
+                },
+                "JQuery": {
+                    "Version": "1.12.4",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "MetaGenerator": {
+                    "String": "WordPress 4.9.6"
+                },
+                "Open-Graph-Protocol": {
+                    "Version": "website"
+                },
+                "Script": {
+                    "String": "application/ld+json,text/javascript"
+                },
+                "UncommonHeaders": {
+                    "String": "link (from headers)"
+                },
+                "WordPress": {
+                    "Version": "4.9.6",
+                    "Google Dorks": "(1)",
+                    "Website": "[URL_ANONIMIZADA]"
+                }
+            },
+            "http_headers": {
+                "Status-Line": "HTTP/1.1 200 OK",
+                "Date": "Wed, 10 Sep 2025 12:28:20 GMT",
+                "Server": [
+                    "Apache",
+                    "Apache"
+                ],
+                "Link": [
+                    "<[URL_ANONIMIZADA] rel=\"[URL_ANONIMIZADA]",
+                    "<[URL_ANONIMIZADA] rel=shortlink"
+                ],
+                "Vary": "Accept-Encoding",
+                "Content-Encoding": "gzip",
+                "Content-Length": "9129",
+                "Connection": "close",
+                "Content-Type": "text/html; charset=UTF-8"
+            },
+            "ferramentas": [
+                "Apache",
+                "Bootstrap[1.1,4.9.6]",
+                "Email[[EMAIL_ANONIMIZADO]]",
+                "HTML5",
+                "HTTPServer[Apache]",
+                "JQuery[1.12.4]",
+                "MetaGenerator[WordPress 4.9.6]",
+                "Open-Graph-Protocol[website]",
+                "Script[application/ld+json,text/javascript]",
+                "UncommonHeaders[link]",
+                "WordPress[4.9.6]"
+            ]
+        },
+        "NMAP": {
+            "target": "janis.sti.[TERMO_SENSIVEL].br",
+            "ip": "[IP_ANONIMIZADO]",
+            "status": "up",
+            "ports": [
+                {
+                    "port": 80,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "http",
+                    "version": "Apache httpd"
+                },
+                {
+                    "port": 443,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "ssl/http",
+                    "version": "Apache httpd"
+                }
+            ],
+            "os_info": {}
+        },
+        "GoBuster": [
+            {
+                "diretorio": "/# license, visit [URL_ANONIMIZADA]",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/# Suite 300, San Francisco, California, 94105, USA.",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/# or send a letter to Creative Commons, 171 Second Street,",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/logo",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/rss",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/login",
+                "status": 302,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/en",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/downloads",
+                "status": 301,
+                "size": 244,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/info",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/i",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/0",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/feed",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/business",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/atom",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/data",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/in",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/a",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/c",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/wp-content",
+                "status": 301,
+                "size": 245,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/p",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/admin",
+                "status": 302,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/r",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/d",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/e",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/local",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/login",
+                "status": 302,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/admin",
+                "status": 302,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            }
+        ],
+        "DNSRecon": {
+            "alvo": "[URL_ANONIMIZADA]",
+            "dnssec_ativo": false,
+            "registros": [
+                {
+                    "tipo": "A",
+                    "dominio": "[URL_ANONIMIZADA]",
+                    "valor": "[IP_ANONIMIZADO]"
+                }
+            ],
+            "reverso": [
+                {
+                    "arpa": "[IP_ANONIMIZADO].in-addr.arpa",
+                    "dominio": "janis.sti.[TERMO_SENSIVEL].br"
+                }
+            ],
+            "mx_info": "[URL_ANONIMIZADA] has no MX record",
+            "ns_info": "[URL_ANONIMIZADA] has no NS record",
+            "subdominios_encontrados": 0
+        }
+    }
+}

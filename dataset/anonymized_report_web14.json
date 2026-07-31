@@ -1,0 +1,263 @@
+{
+    "fastef.[TERMO_SENSIVEL].br": {
+        "ResoluÃ§Ã£o DNS": {
+            "fastef.[TERMO_SENSIVEL].br": "[IP_ANONIMIZADO]"
+        },
+        "WhatWeb Analysis": {
+            "[URL_ANONIMIZADA]": {
+                "code": "403",
+                "status": "Forbidden",
+                "tecnologias": [
+                    "Apache",
+                    "Country[BRAZIL][BR]",
+                    "HTTPServer[Apache]",
+                    "IP[[IP_ANONIMIZADO]]",
+                    "Title[403 Forbidden]"
+                ]
+            },
+            "ip_principal": "[IP_ANONIMIZADO]"
+        },
+        "WhoIs": {
+            "Date": "Thu, 11 Sep 2025 17:04:24 GMT",
+            "Server": "Apache",
+            "Location": "[URL_ANONIMIZADA]",
+            "Cache-Control": "max-age=0",
+            "Expires": "Thu, 11 Sep 2025 17:04:24 GMT",
+            "Connection": "close",
+            "Content-Type": "text/html; charset=iso-8859-1"
+        },
+        "WhatWeb Detailed Analysis": {
+            "summary": {
+                "url": "[URL_ANONIMIZADA]",
+                "codigo": "403",
+                "status": "Forbidden",
+                "title": "403 Forbidden",
+                "ip": "[IP_ANONIMIZADO]",
+                "country": "BRAZIL",
+                "sigla": "BR"
+            },
+            "plugins": {
+                "Apache": {
+                    "Google Dorks": "(3)",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "HTTPServer": {
+                    "String": "Apache (from server string)"
+                }
+            },
+            "http_headers": {
+                "Status-Line": "HTTP/1.1 403 Forbidden",
+                "Date": "Thu, 11 Sep 2025 17:04:26 GMT",
+                "Server": [
+                    "Apache",
+                    "Apache"
+                ],
+                "Content-Length": "199",
+                "Connection": "close",
+                "Content-Type": "text/html; charset=iso-8859-1"
+            },
+            "ferramentas": [
+                "Apache",
+                "HTTPServer[Apache]"
+            ]
+        },
+        "NMAP": {
+            "target": "vpshost8867.publiccloud.com.br",
+            "ip": "[IP_ANONIMIZADO]",
+            "status": "up",
+            "ports": [
+                {
+                    "port": 20,
+                    "protocol": "tcp",
+                    "state": "closed",
+                    "service": "ftp-data",
+                    "version": "21/tcp  open   ftp      Pure-FTPd"
+                },
+                {
+                    "port": 22,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "ssh",
+                    "version": "OpenSSH 7.4 (protocol 2.0)"
+                },
+                {
+                    "port": 80,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "http",
+                    "version": "Apache httpd"
+                },
+                {
+                    "port": 443,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "ssl/http",
+                    "version": "Apache httpd"
+                },
+                {
+                    "port": 22,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "ssh",
+                    "version": "OpenSSH 7.4 (protocol 2.0)"
+                },
+                {
+                    "port": 80,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "http",
+                    "version": "Apache httpd"
+                },
+                {
+                    "port": 443,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "ssl/http",
+                    "version": "Apache httpd"
+                }
+            ],
+            "os_info": {}
+        },
+        "GoBuster": [],
+        "DNSRecon": {
+            "alvo": "[URL_ANONIMIZADA]",
+            "dnssec_ativo": false,
+            "registros": [
+                {
+                    "tipo": "SOA",
+                    "dominio": "ns1.locaweb.com.br",
+                    "valor": "[IP_ANONIMIZADO]"
+                },
+                {
+                    "tipo": "SOA",
+                    "dominio": "ns1.locaweb.com.br",
+                    "valor": "2804:218:7000:0:186:202:8:254"
+                },
+                {
+                    "tipo": "NS",
+                    "dominio": "ns2.locaweb.com.br",
+                    "valor": "[IP_ANONIMIZADO]"
+                },
+                {
+                    "tipo": "NS",
+                    "dominio": "ns2.locaweb.com.br",
+                    "valor": "2804:218:7001:0:187:45:248:254"
+                },
+                {
+                    "tipo": "NS",
+                    "dominio": "ns3.locaweb.com.br",
+                    "valor": "[IP_ANONIMIZADO]"
+                },
+                {
+                    "tipo": "NS",
+                    "dominio": "ns3.locaweb.com.br",
+                    "valor": "2804:218:7002:0:189:126:101:254"
+                },
+                {
+                    "tipo": "NS",
+                    "dominio": "ns1.locaweb.com.br",
+                    "valor": "[IP_ANONIMIZADO]"
+                },
+                {
+                    "tipo": "NS",
+                    "dominio": "ns1.locaweb.com.br",
+                    "valor": "2804:218:7000:0:186:202:8:254"
+                },
+                {
+                    "tipo": "MX",
+                    "dominio": "aspmx.l.google.com",
+                    "valor": "[IP_ANONIMIZADO]"
+                },
+                {
+                    "tipo": "MX",
+                    "dominio": "alt1.aspmx.l.google.com",
+                    "valor": "[IP_ANONIMIZADO]"
+                },
+                {
+                    "tipo": "MX",
+                    "dominio": "alt2.aspmx.l.google.com",
+                    "valor": "[IP_ANONIMIZADO]"
+                },
+                {
+                    "tipo": "MX",
+                    "dominio": "aspmx2.googlemail.com",
+                    "valor": "[IP_ANONIMIZADO]"
+                },
+                {
+                    "tipo": "MX",
+                    "dominio": "aspmx3.googlemail.com",
+                    "valor": "[IP_ANONIMIZADO]"
+                },
+                {
+                    "tipo": "MX",
+                    "dominio": "aspmx4.googlemail.com",
+                    "valor": "[IP_ANONIMIZADO]"
+                },
+                {
+                    "tipo": "MX",
+                    "dominio": "aspmx5.googlemail.com",
+                    "valor": "[IP_ANONIMIZADO]"
+                },
+                {
+                    "tipo": "MX",
+                    "dominio": "aspmx.l.google.com",
+                    "valor": "2800:3f0:4003:c08::1a"
+                },
+                {
+                    "tipo": "MX",
+                    "dominio": "alt1.aspmx.l.google.com",
+                    "valor": "2a00:1450:400c:c00::1a"
+                },
+                {
+                    "tipo": "MX",
+                    "dominio": "alt2.aspmx.l.google.com",
+                    "valor": "2a00:1450:4025:402::1a"
+                },
+                {
+                    "tipo": "MX",
+                    "dominio": "aspmx2.googlemail.com",
+                    "valor": "2a00:1450:400c:c00::1b"
+                },
+                {
+                    "tipo": "MX",
+                    "dominio": "aspmx3.googlemail.com",
+                    "valor": "2a00:1450:4025:402::1b"
+                },
+                {
+                    "tipo": "MX",
+                    "dominio": "aspmx4.googlemail.com",
+                    "valor": "2a00:1450:4013:c1c::1b"
+                },
+                {
+                    "tipo": "MX",
+                    "dominio": "aspmx5.googlemail.com",
+                    "valor": "2a00:1450:4025:c01::1b"
+                },
+                {
+                    "tipo": "CNAME",
+                    "dominio": "[URL_ANONIMIZADA]",
+                    "valor": "fastef.[TERMO_SENSIVEL].br"
+                },
+                {
+                    "tipo": "A",
+                    "dominio": "fastef.[TERMO_SENSIVEL].br",
+                    "valor": "[IP_ANONIMIZADO]"
+                },
+                {
+                    "tipo": "TXT",
+                    "dominio": "[URL_ANONIMIZADA]",
+                    "valor": "v=spf1"
+                }
+            ],
+            "reverso": [
+                {
+                    "arpa": "[IP_ANONIMIZADO].in-addr.arpa",
+                    "dominio": "vpshost8867.publiccloud.com.br"
+                }
+            ],
+            "mx_info": "[URL_ANONIMIZADA] is an alias for fastef.[TERMO_SENSIVEL].br.",
+            "ns_info": "[URL_ANONIMIZADA] is an alias for fastef.[TERMO_SENSIVEL].br.",
+            "subdominios_encontrados": 0
+        }
+    }
+}

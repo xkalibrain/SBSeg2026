@@ -1,0 +1,183 @@
+{
+    "[URL_ANONIMIZADA]": {
+        "ResoluÃ§Ã£o DNS": {
+            "[URL_ANONIMIZADA]": "[IP_ANONIMIZADO]"
+        },
+        "WhatWeb Analysis": {
+            "[URL_ANONIMIZADA]": {
+                "code": "200",
+                "status": "OK",
+                "tecnologias": [
+                    "Apache",
+                    "Country[BRAZIL][BR]",
+                    "HTTPServer[Apache]",
+                    "IP[[IP_ANONIMIZADO]]",
+                    "Title[[TERMO_SENSIVEL] - Universidade Federal do CearÃ¡]"
+                ]
+            },
+            "ip_principal": "[IP_ANONIMIZADO]"
+        },
+        "WhoIs": {
+            "Date": "Thu, 11 Sep 2025 17:57:12 GMT",
+            "Server": "Apache",
+            "X-Pingback": "[URL_ANONIMIZADA]",
+            "Vary": "Accept-Encoding",
+            "Content-Type": "text/html; charset=UTF-8"
+        },
+        "WhatWeb Detailed Analysis": {
+            "summary": {
+                "url": "[URL_ANONIMIZADA]",
+                "codigo": "200",
+                "status": "OK",
+                "title": "Equipe [TERMO_SENSIVEL] Esporte Motor",
+                "ip": "[IP_ANONIMIZADO]",
+                "country": "BRAZIL",
+                "sigla": "BR"
+            },
+            "plugins": {
+                "Apache": {
+                    "Google Dorks": "(3)",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "HTTPServer": {
+                    "String": "Apache (from server string)"
+                },
+                "JQuery": {
+                    "Version": "1.6.1",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "MetaGenerator": {
+                    "String": "WordPress 3.2.1"
+                },
+                "NextGEN-Gallery": {
+                    "Version": "1.8.3",
+                    "String": "Wordpress",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "Script": {
+                    "String": "text/javascript"
+                },
+                "WordPress": {
+                    "Version": "3.2.1",
+                    "Google Dorks": "(1)",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "X-UA-Compatible": {
+                    "http": "//msdn.microsoft.com/en-us/library/cc817574.aspx",
+                    "String": "IE=8"
+                },
+                "x-pingback": {
+                    "http": "//en.wikipedia.org/wiki/Pingback",
+                    "String": "[URL_ANONIMIZADA]"
+                }
+            },
+            "http_headers": {
+                "Status-Line": "HTTP/1.1 200 OK",
+                "Date": "Thu, 11 Sep 2025 17:57:15 GMT",
+                "Server": [
+                    "Apache",
+                    "Apache"
+                ],
+                "X-Pingback": "[URL_ANONIMIZADA]",
+                "Vary": "Accept-Encoding",
+                "Content-Encoding": "gzip",
+                "Content-Length": "2591",
+                "Connection": "close",
+                "Content-Type": "text/html; charset=UTF-8"
+            },
+            "ferramentas": [
+                "Apache",
+                "HTTPServer[Apache]",
+                "JQuery[1.6.1]",
+                "MetaGenerator[WordPress 3.2.1]",
+                "NextGEN-Gallery[1.8.3][Wordpress]",
+                "Script[text/javascript]",
+                "WordPress[3.2.1]",
+                "x-pingback[[URL_ANONIMIZADA]",
+                "X-UA-Compatible[IE=8]"
+            ]
+        },
+        "NMAP": {
+            "target": "janis.sti.[TERMO_SENSIVEL].br",
+            "ip": "[IP_ANONIMIZADO]",
+            "status": "up",
+            "ports": [
+                {
+                    "port": 80,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "http",
+                    "version": "Apache httpd"
+                },
+                {
+                    "port": 443,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "ssl/http",
+                    "version": "Apache httpd"
+                },
+                {
+                    "port": 80,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "http",
+                    "version": "Apache httpd"
+                },
+                {
+                    "port": 443,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "ssl/http",
+                    "version": "Apache httpd"
+                }
+            ],
+            "os_info": {}
+        },
+        "GoBuster": [
+            {
+                "diretorio": "/wp-content",
+                "status": 301,
+                "size": 245,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/wp-includes",
+                "status": 301,
+                "size": 246,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/wp-admin",
+                "status": 301,
+                "size": 243,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/wp-admin",
+                "status": 301,
+                "size": 243,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            }
+        ],
+        "DNSRecon": {
+            "alvo": "[URL_ANONIMIZADA]",
+            "dnssec_ativo": false,
+            "registros": [
+                {
+                    "tipo": "A",
+                    "dominio": "[URL_ANONIMIZADA]",
+                    "valor": "[IP_ANONIMIZADO]"
+                }
+            ],
+            "reverso": [
+                {
+                    "arpa": "[IP_ANONIMIZADO].in-addr.arpa",
+                    "dominio": "janis.sti.[TERMO_SENSIVEL].br"
+                }
+            ],
+            "mx_info": "[URL_ANONIMIZADA] has no MX record",
+            "ns_info": "[URL_ANONIMIZADA] has no NS record",
+            "subdominios_encontrados": 0
+        }
+    }
+}

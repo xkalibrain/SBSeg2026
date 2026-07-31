@@ -1,0 +1,221 @@
+{
+    "labosan.[TERMO_SENSIVEL].br": {
+        "ResoluÃ§Ã£o DNS": {
+            "labosan.[TERMO_SENSIVEL].br": "[IP_ANONIMIZADO]"
+        },
+        "WhatWeb Analysis": {
+            "[URL_ANONIMIZADA]": {
+                "code": "200",
+                "status": "OK",
+                "tecnologias": [
+                    "Bootstrap[1757700041]",
+                    "Country[BRAZIL][BR]",
+                    "Email[[EMAIL_ANONIMIZADO],[EMAIL_ANONIMIZADO]]",
+                    "Frame",
+                    "HTML5",
+                    "HTTPServer[nginx/1.22.1]",
+                    "IP[[IP_ANONIMIZADO]]",
+                    "JQuery[3.7.1]",
+                    "MetaGenerator[Elementor 3.21.2; features: e_optimized_assets_loading, e_optimized_css_loading, e_font_icon_svg, additional_custom_breakpoints, e_lazyload; settings: css_print_method-external, google_font-enabled, font_display-swap,Redux 4.4.15,WordPress 6.5.5]",
+                    "PHP[7.4.33]",
+                    "Script[text/javascript]",
+                    "Title[Labosan]",
+                    "UncommonHeaders[link,x-tec-api-version,x-tec-api-root,x-tec-api-origin,lw-x-id]",
+                    "WordPress[6.5.5]",
+                    "Wordpress-Contact-Form[[IP_ANONIMIZADO]]",
+                    "X-Powered-By[PHP/7.4.33]",
+                    "X-UA-Compatible[IE=edge]",
+                    "nginx[1.22.1]"
+                ]
+            },
+            "ip_principal": "[IP_ANONIMIZADO]"
+        },
+        "WhoIs": {
+            "Server": "nginx/1.22.1",
+            "Date": "Fri, 12 Sep 2025 18:01:20 GMT",
+            "Content-Type": "text/html; charset=UTF-8",
+            "Content-Length": "0",
+            "Connection": "keep-alive",
+            "X-Powered-By": "PHP/7.4.33",
+            "X-Redirect-By": "WordPress",
+            "Location": "[URL_ANONIMIZADA]",
+            "X-Cache": "MISS",
+            "Lw-X-Id": "61b5fb3e7914f7cf2768d4891aa584fb.17982322-[IP_ANONIMIZADO]:55646@dinesh0030"
+        },
+        "WhatWeb Detailed Analysis": {
+            "summary": {
+                "url": "[URL_ANONIMIZADA]",
+                "codigo": "301",
+                "status": "Moved Permanently",
+                "title": "<None>",
+                "ip": "[IP_ANONIMIZADO]",
+                "country": "BRAZIL",
+                "sigla": "BR"
+            },
+            "plugins": {
+                "Bootstrap": {
+                    "Version": "1757700090",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "Email": {
+                    "syntactically invalid email addresses from mailto": "link",
+                    "mailto": "to catch anti-spam email addresses, eg. bob at",
+                    "expression from \n\thttp": "//[URL_ANONIMIZADA] for valid",
+                    "String": "[EMAIL_ANONIMIZADO],[EMAIL_ANONIMIZADO]"
+                },
+                "Frame": {},
+                "HTML5": {},
+                "HTTPServer": {
+                    "String": "nginx/1.22.1 (from server string)"
+                },
+                "JQuery": {
+                    "Version": "3.7.1",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "MetaGenerator": {
+                    "String": "Elementor 3.21.2; features: e_optimized_assets_loading, e_optimized_css_loading, e_font_icon_svg, additional_custom_breakpoints, e_lazyload; settings: css_print_method-external, google_font-enabled, font_display-swap,Redux 4.4.15,WordPress 6.5.5"
+                },
+                "PHP": {
+                    "Version": "7.4.33",
+                    "Google Dorks": "(3)",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "Script": {
+                    "String": "text/javascript"
+                },
+                "UncommonHeaders": {
+                    "String": "link,x-tec-api-version,x-tec-api-root,x-tec-api-origin,lw-x-id (from headers)"
+                },
+                "WordPress": {
+                    "Version": "6.5.5",
+                    "Google Dorks": "(1)",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "Wordpress-Contact-Form": {
+                    "Version": "[IP_ANONIMIZADO]",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "X-Powered-By": {
+                    "String": "PHP/7.4.33 (from x-powered-by string)"
+                },
+                "X-UA-Compatible": {
+                    "http": "//msdn.microsoft.com/en-us/library/cc817574.aspx",
+                    "String": "IE=edge"
+                },
+                "nginx": {
+                    "Version": "1.22.1",
+                    "Website": "[URL_ANONIMIZADA]"
+                }
+            },
+            "http_headers": {
+                "Status-Line": "HTTP/1.1 200 OK",
+                "Server": [
+                    "nginx/1.22.1",
+                    "nginx/1.22.1"
+                ],
+                "X-Powered-By": "PHP/7.4.33"
+            },
+            "ferramentas": [
+                "HTTPServer[nginx/1.22.1]",
+                "nginx[1.22.1]",
+                "PHP[7.4.33]",
+                "RedirectLocation[[URL_ANONIMIZADA]",
+                "UncommonHeaders[x-redirect-by,lw-x-id]",
+                "X-Powered-By[PHP/7.4.33]"
+            ]
+        },
+        "NMAP": {
+            "target": null,
+            "ip": null,
+            "status": null,
+            "ports": [],
+            "os_info": {}
+        },
+        "GoBuster": [],
+        "DNSRecon": {
+            "alvo": "[URL_ANONIMIZADA]",
+            "dnssec_ativo": false,
+            "registros": [
+                {
+                    "tipo": "SOA",
+                    "dominio": "ns1.locaweb.com.br",
+                    "valor": "[IP_ANONIMIZADO]"
+                },
+                {
+                    "tipo": "SOA",
+                    "dominio": "ns1.locaweb.com.br",
+                    "valor": "2804:218:7000:0:186:202:8:254"
+                },
+                {
+                    "tipo": "NS",
+                    "dominio": "ns2.locaweb.com.br",
+                    "valor": "[IP_ANONIMIZADO]"
+                },
+                {
+                    "tipo": "NS",
+                    "dominio": "ns2.locaweb.com.br",
+                    "valor": "2804:218:7001:0:187:45:248:254"
+                },
+                {
+                    "tipo": "NS",
+                    "dominio": "ns3.locaweb.com.br",
+                    "valor": "[IP_ANONIMIZADO]"
+                },
+                {
+                    "tipo": "NS",
+                    "dominio": "ns3.locaweb.com.br",
+                    "valor": "2804:218:7002:0:189:126:101:254"
+                },
+                {
+                    "tipo": "NS",
+                    "dominio": "ns1.locaweb.com.br",
+                    "valor": "[IP_ANONIMIZADO]"
+                },
+                {
+                    "tipo": "NS",
+                    "dominio": "ns1.locaweb.com.br",
+                    "valor": "2804:218:7000:0:186:202:8:254"
+                },
+                {
+                    "tipo": "MX",
+                    "dominio": "mx.jk.locaweb.com.br",
+                    "valor": "[IP_ANONIMIZADO]"
+                },
+                {
+                    "tipo": "MX",
+                    "dominio": "mx.core.locaweb.com.br",
+                    "valor": "[IP_ANONIMIZADO]"
+                },
+                {
+                    "tipo": "MX",
+                    "dominio": "mx.a.locaweb.com.br",
+                    "valor": "[IP_ANONIMIZADO]"
+                },
+                {
+                    "tipo": "MX",
+                    "dominio": "mx.b.locaweb.com.br",
+                    "valor": "[IP_ANONIMIZADO]"
+                },
+                {
+                    "tipo": "CNAME",
+                    "dominio": "[URL_ANONIMIZADA]",
+                    "valor": "labosan.[TERMO_SENSIVEL].br"
+                },
+                {
+                    "tipo": "A",
+                    "dominio": "labosan.[TERMO_SENSIVEL].br",
+                    "valor": "[IP_ANONIMIZADO]"
+                },
+                {
+                    "tipo": "TXT",
+                    "dominio": "[URL_ANONIMIZADA]",
+                    "valor": "v=spf1"
+                }
+            ],
+            "reverso": [],
+            "mx_info": "[URL_ANONIMIZADA] is an alias for labosan.[TERMO_SENSIVEL].br.",
+            "ns_info": "[URL_ANONIMIZADA] is an alias for labosan.[TERMO_SENSIVEL].br.",
+            "subdominios_encontrados": 0
+        }
+    }
+}

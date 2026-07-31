@@ -1,0 +1,202 @@
+{
+    "[URL_ANONIMIZADA]": {
+        "ResoluÃ§Ã£o DNS": {
+            "[URL_ANONIMIZADA]": "[IP_ANONIMIZADO]"
+        },
+        "WhatWeb Analysis": {
+            "[URL_ANONIMIZADA]": {
+                "code": "200",
+                "status": "OK",
+                "tecnologias": [
+                    "Bootstrap",
+                    "Content-Language[pt-br]",
+                    "Country[BRAZIL][BR]",
+                    "Frame",
+                    "HTML5",
+                    "IP[[IP_ANONIMIZADO]]",
+                    "JQuery",
+                    "MetaGenerator[Plone - [URL_ANONIMIZADA]",
+                    "Open-Graph-Protocol[article]",
+                    "Plone",
+                    "Script[application/ld+json,module,text,text/javascript]",
+                    "Strict-Transport-Security[max-age=31536000]",
+                    "Title[CH-[TERMO_SENSIVEL] - Complexo Hospitalar da [TERMO_SENSIVEL] â€” Empresa Brasileira de ServiÃ§os Hospitalares]",
+                    "UncommonHeaders[x-tile-url,x-cache-operation,x-cache-rule,x-robots-tag,x-vcl-version-fb,x-bname,x-varnish,x-cache-fb,x-cache-rule-f,x-vcl-version-f,x-cache-f,x-varnish-age,x-content-type-options,referrer-policy,content-security-policy]",
+                    "Varnish",
+                    "Via-Proxy[1.1 varnish (Varnish/6.0), 1.1 varnish (Varnish/6.0), 1.1 [URL_ANONIMIZADA]",
+                    "X-Frame-Options[DENY]",
+                    "X-UA-Compatible[IE=edge]",
+                    "X-XSS-Protection[1]"
+                ]
+            },
+            "ip_principal": "[IP_ANONIMIZADO]"
+        },
+        "WhoIs": {
+            "Server": "nginx/1.18.0 (Ubuntu)",
+            "Date": "Thu, 11 Sep 2025 15:22:48 GMT",
+            "Content-Type": "text/html",
+            "Content-Length": "154",
+            "Connection": "keep-alive",
+            "Location": "[URL_ANONIMIZADA]",
+            "Cache-Control": "no-cache"
+        },
+        "WhatWeb Detailed Analysis": {
+            "summary": {
+                "url": "[URL_ANONIMIZADA]",
+                "codigo": "302",
+                "status": "Found",
+                "title": "302 Found",
+                "ip": "[IP_ANONIMIZADO]",
+                "country": "BRAZIL",
+                "sigla": "BR"
+            },
+            "plugins": {
+                "Bootstrap": {
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "Content-Language": {
+                    "String": "pt-br"
+                },
+                "Frame": {},
+                "HTML5": {},
+                "JQuery": {
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "MetaGenerator": {
+                    "String": "Plone - [URL_ANONIMIZADA]"
+                },
+                "Open-Graph-Protocol": {
+                    "Version": "article"
+                },
+                "Plone": {
+                    "Google Dorks": "(2)",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "Script": {
+                    "String": "application/ld+json,module,text,text/javascript"
+                },
+                "Strict-Transport-Security": {
+                    "String": "max-age=31536000"
+                },
+                "UncommonHeaders": {
+                    "String": "x-tile-url,x-cache-operation,x-cache-rule,x-robots-tag,x-vcl-version-b,x-bname,x-varnish,x-cache-b,x-cache-rule-f,x-vcl-version-f,x-cache-f,x-varnish-age,x-content-type-options,referrer-policy,content-security-policy (from headers)"
+                },
+                "Varnish": {
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "Via-Proxy": {
+                    "String": "1.1 varnish (Varnish/6.0), 1.1 varnish (Varnish/6.0), 1.1 [URL_ANONIMIZADA]"
+                },
+                "X-Frame-Options": {
+                    "http": "//msdn.microsoft.com/en-us/library/cc288472%28VS.85%29.",
+                    "aspx\n\n\tString": "DENY"
+                },
+                "X-UA-Compatible": {
+                    "http": "//msdn.microsoft.com/en-us/library/cc817574.aspx",
+                    "String": "IE=edge"
+                },
+                "X-XSS-Protection": {
+                    "http": "//msdn.microsoft.com/en-us/library/cc288472%28VS.85%29.",
+                    "aspx\n\n\tString": "1"
+                }
+            },
+            "http_headers": {
+                "Status-Line": "HTTP/1.1 200 OK",
+                "Date": "Thu, 11 Sep 2025 14:22:42 GMT",
+                "X-Tile-Url": "[URL_ANONIMIZADA]",
+                "X-Cache-Operation": "plone.app.caching.moderateCaching",
+                "Expires": "Mon, 14 Sep 2015 14:22:42 GMT",
+                "Vary": "X-Anonymous,Accept-Encoding",
+                "Last-Modified": "Thu, 11 Sep 2025 13:52:32 GMT",
+                "X-Cache-Rule": "plone.content.folderView",
+                "X-Robots-Tag": "noimageindex",
+                "Content-Language": "pt-br",
+                "X-Ua-Compatible": "IE=edge",
+                "X-Frame-Options": "DENY",
+                "Content-Type": "text/html;charset=utf-8",
+                "X-VCL-Version-B": "1.3.0.back",
+                "X-BName": "client_5438_11002",
+                "X-Varnish": [
+                    "643793334 645038334",
+                    "103632942 109748976"
+                ],
+                "Via": [
+                    "1.1 varnish (Varnish/6.0)",
+                    "1.1 varnish (Varnish/6.0)",
+                    "1.1 [URL_ANONIMIZADA]"
+                ],
+                "X-Cache-B": "HIT",
+                "X-Cache-Rule-F": "anon_10m",
+                "cache-control": "max-age=10, s-maxage=0, must-revalidate",
+                "X-VCL-Version-F": "1.2.1.front",
+                "X-Cache-F": "HIT",
+                "X-Varnish-Age": "48",
+                "Age": "0",
+                "Accept-Ranges": "bytes",
+                "Content-Encoding": "gzip",
+                "X-Content-Type-Options": "nosniff",
+                "X-XSS-Protection": "1",
+                "Referrer-Policy": "same-origin",
+                "Strict-Transport-Security": "max-age=31536000",
+                "Server": "nginx/1.18.0 (Ubuntu)"
+            },
+            "ferramentas": [
+                "HTTPServer[Ubuntu Linux][nginx/1.18.0 (Ubuntu)]",
+                "nginx[1.18.0]",
+                "RedirectLocation[[URL_ANONIMIZADA]"
+            ]
+        },
+        "NMAP": {
+            "target": "[IP_ANONIMIZADO]",
+            "ip": "[IP_ANONIMIZADO]",
+            "status": "up",
+            "ports": [
+                {
+                    "port": 22,
+                    "protocol": "tcp",
+                    "state": "closed",
+                    "service": "ssh",
+                    "version": "80/tcp  open   http       nginx 1.18.0 (Ubuntu)"
+                },
+                {
+                    "port": 113,
+                    "protocol": "tcp",
+                    "state": "closed",
+                    "service": "ident",
+                    "version": "179/tcp open   tcpwrapped"
+                },
+                {
+                    "port": 443,
+                    "protocol": "tcp",
+                    "state": "closed",
+                    "service": "https",
+                    "version": "Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel"
+                },
+                {
+                    "port": 80,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "http",
+                    "version": "nginx 1.18.0 (Ubuntu)"
+                }
+            ],
+            "os_info": {}
+        },
+        "GoBuster": [],
+        "DNSRecon": {
+            "alvo": "[URL_ANONIMIZADA]",
+            "dnssec_ativo": false,
+            "registros": [
+                {
+                    "tipo": "A",
+                    "dominio": "[URL_ANONIMIZADA]",
+                    "valor": "[IP_ANONIMIZADO]"
+                }
+            ],
+            "reverso": [],
+            "mx_info": "[URL_ANONIMIZADA] has no MX record",
+            "ns_info": "[URL_ANONIMIZADA] has no NS record",
+            "subdominios_encontrados": 0
+        }
+    }
+}

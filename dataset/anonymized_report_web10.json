@@ -1,0 +1,247 @@
+{
+    "[URL_ANONIMIZADA]": {
+        "ResoluÃ§Ã£o DNS": {
+            "[URL_ANONIMIZADA]": "[IP_ANONIMIZADO]"
+        },
+        "WhatWeb Analysis": {
+            "[URL_ANONIMIZADA]": {
+                "code": "200",
+                "status": "OK",
+                "tecnologias": [
+                    "Cookies[sb]",
+                    "Country[FRANCE][FR]",
+                    "HTML5",
+                    "HttpOnly[sb]",
+                    "IP[[IP_ANONIMIZADO]]",
+                    "Open-Graph-Protocol[video.other]",
+                    "Script[application/json]",
+                    "Strict-Transport-Security[max-age=15552000; preload]",
+                    "Title[Design - Moda [TERMO_SENSIVEL]]",
+                    "UncommonHeaders[accept-ch-lifetime,accept-ch,link,reporting-endpoints,report-to,content-security-policy-report-only,content-security-policy,document-policy,permissions-policy,cross-origin-resource-policy,origin-trial,cross-origin-opener-policy,x-content-type-options,origin-agent-cluster,x-fb-debug,x-fb-connection-quality,alt-svc]",
+                    "X-XSS-Protection[0]"
+                ]
+            },
+            "ip_principal": "[IP_ANONIMIZADO]"
+        },
+        "WhoIs": {
+            "Date": "Wed, 10 Sep 2025 16:18:04 GMT",
+            "Server": "Apache/2.2.22 (Debian)",
+            "Location": "[URL_ANONIMIZADA]",
+            "Vary": "Accept-Encoding",
+            "Content-Type": "text/html"
+        },
+        "WhatWeb Detailed Analysis": {
+            "summary": {
+                "url": "[URL_ANONIMIZADA]",
+                "codigo": "302",
+                "status": "Found",
+                "title": "<None>",
+                "ip": "[IP_ANONIMIZADO]",
+                "country": "BRAZIL",
+                "sigla": "BR"
+            },
+            "plugins": {
+                "Cookies": {
+                    "String": "sb"
+                },
+                "HTML5": {},
+                "HttpOnly": {
+                    "http": "//en.wikipedia.org/wiki/HTTP_cookie",
+                    "String": "sb"
+                },
+                "Open-Graph-Protocol": {
+                    "Version": "video.other"
+                },
+                "Script": {
+                    "String": "application/json"
+                },
+                "Strict-Transport-Security": {
+                    "String": "max-age=15552000; preload"
+                },
+                "UncommonHeaders": {
+                    "String": "accept-ch-lifetime,accept-ch,link,reporting-endpoints,report-to,content-security-policy-report-only,content-security-policy,document-policy,permissions-policy,cross-origin-resource-policy,origin-trial,cross-origin-embedder-policy-report-only,cross-origin-opener-policy,x-content-type-options,origin-agent-cluster,x-fb-debug,x-fb-connection-quality,alt-svc (from headers)"
+                },
+                "X-XSS-Protection": {
+                    "http": "//msdn.microsoft.com/en-us/library/cc288472%28VS.85%29.",
+                    "aspx\n\n\tString": "0"
+                }
+            },
+            "http_headers": {
+                "Status-Line": "HTTP/1.1 200 OK",
+                "Vary": "Accept-Encoding",
+                "Content-Encoding": "gzip",
+                "Set-Cookie": "sb=x6TBaDDSetoUPt5ITNzR0pdi; expires=Thu, 15-Oct-2026 16:18:15 GMT; Max-Age=34560000; path=/; domain=.facebook.com; secure; httponly",
+                "accept-ch-lifetime": "4838400",
+                "accept-ch": "viewport-width,dpr,Sec-CH-Prefers-Color-Scheme,Sec-CH-UA-Full-Version-List,Sec-CH-UA-Platform-Version,Sec-CH-UA-Model",
+                "Link": "<[URL_ANONIMIZADA] rel=\"canonical\"",
+                "reporting-endpoints": "coop_report=\"[URL_ANONIMIZADA] coep_report=\"[URL_ANONIMIZADA] default=\"[URL_ANONIMIZADA] permissions_policy=\"[URL_ANONIMIZADA]",
+                "Server": "Apache/2.2.22 (Debian)"
+            },
+            "ferramentas": [
+                "Apache[2.2.22]",
+                "HTTPServer[Debian Linux][Apache/2.2.22 (Debian)]",
+                "RedirectLocation[[URL_ANONIMIZADA]"
+            ]
+        },
+        "NMAP": {
+            "target": "www2.[TERMO_SENSIVEL].br",
+            "ip": "[IP_ANONIMIZADO]",
+            "status": "up",
+            "ports": [
+                {
+                    "port": 20,
+                    "protocol": "tcp",
+                    "state": "closed",
+                    "service": "ftp-data",
+                    "version": "21/tcp   closed ftp"
+                },
+                {
+                    "port": 80,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "http",
+                    "version": "Apache httpd 2.2.22 ((Debian))"
+                },
+                {
+                    "port": 9102,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "jetdirect?",
+                    "version": "Service detection performed. Please report any incorrect results at [URL_ANONIMIZADA] ."
+                },
+                {
+                    "port": 80,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "http",
+                    "version": "Apache httpd 2.2.22 ((Debian))"
+                }
+            ],
+            "os_info": {}
+        },
+        "GoBuster": [
+            {
+                "diretorio": "/images",
+                "status": 301,
+                "size": 335,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/media",
+                "status": 301,
+                "size": 334,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/templates",
+                "status": 301,
+                "size": 338,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/modules",
+                "status": 301,
+                "size": 336,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/plugins",
+                "status": 301,
+                "size": 336,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/includes",
+                "status": 301,
+                "size": 337,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/file",
+                "status": 301,
+                "size": 333,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/language",
+                "status": 301,
+                "size": 337,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/components",
+                "status": 301,
+                "size": 339,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/old",
+                "status": 301,
+                "size": 332,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/cache",
+                "status": 301,
+                "size": 334,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/libraries",
+                "status": 301,
+                "size": 338,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/logs",
+                "status": 301,
+                "size": 333,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/tmp",
+                "status": 301,
+                "size": 332,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/administrator",
+                "status": 301,
+                "size": 342,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/joomla",
+                "status": 301,
+                "size": 335,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/administrator",
+                "status": 301,
+                "size": 342,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            }
+        ],
+        "DNSRecon": {
+            "alvo": "[URL_ANONIMIZADA]",
+            "dnssec_ativo": false,
+            "registros": [
+                {
+                    "tipo": "A",
+                    "dominio": "[URL_ANONIMIZADA]",
+                    "valor": "[IP_ANONIMIZADO]"
+                }
+            ],
+            "reverso": [
+                {
+                    "arpa": "[IP_ANONIMIZADO].in-addr.arpa",
+                    "dominio": "www2.[TERMO_SENSIVEL].br"
+                }
+            ],
+            "mx_info": "[URL_ANONIMIZADA] has no MX record",
+            "ns_info": "[URL_ANONIMIZADA] has no NS record",
+            "subdominios_encontrados": 0
+        }
+    }
+}
