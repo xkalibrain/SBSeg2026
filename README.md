@@ -770,6 +770,7 @@ Ao término do processo, serão produzidos automaticamente:
 - resultados quantitativos utilizados nas tabelas e análises do artigo.
 
 Os arquivos produzidos durante a execução são armazenados automaticamente nos diretórios `outputs/`, `metrics/` e `results/`, permitindo a reprodução completa do benchmark e a validação dos resultados apresentados neste trabalho.
+
 ---
 
 # Tempo Estimado
