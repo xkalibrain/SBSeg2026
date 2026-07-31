@@ -1,0 +1,379 @@
+{
+    "[URL_ANONIMIZADA]": {
+        "ResoluÃ§Ã£o DNS": {
+            "[URL_ANONIMIZADA]": "[IP_ANONIMIZADO]"
+        },
+        "WhatWeb Analysis": {
+            "[URL_ANONIMIZADA]": {
+                "code": "200",
+                "status": "OK",
+                "tecnologias": [
+                    "Apache[2.2.22]",
+                    "Bootstrap",
+                    "Cookies[PHPSESSID]",
+                    "Country[BRAZIL][BR]",
+                    "HTML5",
+                    "HTTPServer[Debian Linux][Apache/2.2.22 (Debian)]",
+                    "IP[[IP_ANONIMIZADO]]",
+                    "JQuery[1.11.1]",
+                    "MetaGenerator[WordPress 4.1.1]",
+                    "Script[text/javascript]",
+                    "Title[13th Brazilian Power Electronics Conference â€“ COBEP e 1st Southern Power Electronics Conference &#8211; SPEC &raquo; COBEP-SPEC 2015]",
+                    "UncommonHeaders[link]",
+                    "WordPress[4.1.1]",
+                    "X-UA-Compatible[IE=edge]",
+                    "x-pingback[[URL_ANONIMIZADA]"
+                ]
+            },
+            "ip_principal": "[IP_ANONIMIZADO]"
+        },
+        "WhoIs": {
+            "Date": "Tue, 09 Sep 2025 17:57:39 GMT",
+            "Server": "Apache/2.2.22 (Debian)",
+            "Set-Cookie": "PHPSESSID=6m7csrlojbifo64fvcjekeu1n2; path=/",
+            "Expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+            "Cache-Control": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+            "Pragma": "no-cache",
+            "X-Pingback": "[URL_ANONIMIZADA]",
+            "Link": "<[URL_ANONIMIZADA] rel=shortlink",
+            "Vary": "Accept-Encoding",
+            "Content-Type": "text/html; charset=UTF-8"
+        },
+        "WhatWeb Detailed Analysis": {
+            "summary": {
+                "url": "[URL_ANONIMIZADA]",
+                "codigo": "200",
+                "status": "OK",
+                "title": "13th Brazilian Power Electronics Conference â€“ COBEP e 1st Southern Power Electronics Conference &#8211; SPEC &raquo; COBEP-SPEC 2015",
+                "ip": "[IP_ANONIMIZADO]",
+                "country": "BRAZIL",
+                "sigla": "BR"
+            },
+            "plugins": {
+                "Apache": {
+                    "Version": "2.2.22 (from HTTP Server Header)",
+                    "Google Dorks": "(3)",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "Bootstrap": {
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "Cookies": {
+                    "String": "PHPSESSID"
+                },
+                "HTML5": {},
+                "HTTPServer": {
+                    "OS": "Debian Linux",
+                    "String": "Apache/2.2.22 (Debian) (from server string)"
+                },
+                "JQuery": {
+                    "Version": "1.11.1",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "MetaGenerator": {
+                    "String": "WordPress 4.1.1"
+                },
+                "Script": {
+                    "String": "text/javascript"
+                },
+                "UncommonHeaders": {
+                    "String": "link (from headers)"
+                },
+                "WordPress": {
+                    "Version": "4.1.1",
+                    "Google Dorks": "(1)",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "X-UA-Compatible": {
+                    "http": "//msdn.microsoft.com/en-us/library/cc817574.aspx",
+                    "String": "IE=edge"
+                },
+                "x-pingback": {
+                    "http": "//en.wikipedia.org/wiki/Pingback",
+                    "String": "[URL_ANONIMIZADA]"
+                }
+            },
+            "http_headers": {
+                "Status-Line": "HTTP/1.1 200 OK",
+                "Date": "Tue, 09 Sep 2025 17:57:43 GMT",
+                "Server": [
+                    "Apache/2.2.22 (Debian)",
+                    "Apache/2.2.22 (Debian)"
+                ],
+                "Set-Cookie": "PHPSESSID=lfimkqigb0opihh36sdd7t3q23; path=/",
+                "Expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+                "Cache-Control": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+                "Pragma": "no-cache",
+                "X-Pingback": "[URL_ANONIMIZADA]",
+                "Link": "<[URL_ANONIMIZADA] rel=shortlink",
+                "Vary": "Accept-Encoding",
+                "Content-Encoding": "gzip",
+                "Content-Length": "6013",
+                "Connection": "close",
+                "Content-Type": "text/html; charset=UTF-8"
+            },
+            "ferramentas": [
+                "Apache[2.2.22]",
+                "Bootstrap",
+                "Cookies[PHPSESSID]",
+                "HTML5",
+                "HTTPServer[Debian Linux][Apache/2.2.22 (Debian)]",
+                "JQuery[1.11.1]",
+                "MetaGenerator[WordPress 4.1.1]",
+                "Script[text/javascript]",
+                "UncommonHeaders[link]",
+                "WordPress[4.1.1]",
+                "x-pingback[[URL_ANONIMIZADA]",
+                "X-UA-Compatible[IE=edge]"
+            ]
+        },
+        "NMAP": {
+            "target": "www2.[TERMO_SENSIVEL].br",
+            "ip": "[IP_ANONIMIZADO]",
+            "status": "up",
+            "ports": [
+                {
+                    "port": 80,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "http",
+                    "version": "Apache httpd 2.2.22 ((Debian))"
+                },
+                {
+                    "port": 80,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "http",
+                    "version": "Apache httpd 2.2.22 ((Debian))"
+                }
+            ],
+            "os_info": {}
+        },
+        "GoBuster": [
+            {
+                "diretorio": "/rss",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/1",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/login",
+                "status": 302,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/support",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/register",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/info",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/18",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/19",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/i",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/0",
+                "status": 200,
+                "size": 23931,
+                "redirecionamento": null
+            },
+            {
+                "diretorio": "/feed",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/atom",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/submit",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/s",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/in",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/b",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/a",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/c",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/wp-content",
+                "status": 301,
+                "size": 341,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/p",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/welcome",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/admin",
+                "status": 302,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/pr",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/registration",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/tutorials",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/r",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/e",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/trans",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/local",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/promo",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/sp",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/l",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/login",
+                "status": 302,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/admin",
+                "status": 302,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            }
+        ],
+        "DNSRecon": {
+            "alvo": "[URL_ANONIMIZADA]",
+            "dnssec_ativo": false,
+            "registros": [
+                {
+                    "tipo": "A",
+                    "dominio": "[URL_ANONIMIZADA]",
+                    "valor": "[IP_ANONIMIZADO]"
+                }
+            ],
+            "reverso": [
+                {
+                    "arpa": "[IP_ANONIMIZADO].in-addr.arpa",
+                    "dominio": "www2.[TERMO_SENSIVEL].br"
+                }
+            ],
+            "mx_info": "[URL_ANONIMIZADA] has no MX record",
+            "ns_info": "[URL_ANONIMIZADA] has no NS record",
+            "subdominios_encontrados": 0
+        }
+    }
+}

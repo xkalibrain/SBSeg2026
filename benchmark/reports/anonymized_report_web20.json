@@ -1,0 +1,373 @@
+{
+    "[URL_ANONIMIZADA]": {
+        "ResoluÃ§Ã£o DNS": {
+            "[URL_ANONIMIZADA]": "[IP_ANONIMIZADO]"
+        },
+        "WhatWeb Analysis": {
+            "[URL_ANONIMIZADA]": {
+                "code": "200",
+                "status": "OK",
+                "tecnologias": [
+                    "Apache",
+                    "Country[BRAZIL][BR]",
+                    "HTML5",
+                    "HTTPServer[Apache]",
+                    "IP[[IP_ANONIMIZADO]]",
+                    "JQuery",
+                    "MetaGenerator[WordPress 5.2.21]",
+                    "Script[text/javascript]",
+                    "Title[LARGEN &#8211; LaboratÃ³rio de Recursos GenÃ©ticos]",
+                    "UncommonHeaders[link]",
+                    "WordPress[5.2.21]",
+                    "X-UA-Compatible[IE=10]"
+                ]
+            },
+            "ip_principal": "[IP_ANONIMIZADO]"
+        },
+        "WhoIs": {
+            "Date": "Fri, 12 Sep 2025 19:12:09 GMT",
+            "Server": "Apache",
+            "Link": "<[URL_ANONIMIZADA] rel=shortlink",
+            "Vary": "Accept-Encoding",
+            "Content-Type": "text/html; charset=UTF-8"
+        },
+        "WhatWeb Detailed Analysis": {
+            "summary": {
+                "url": "[URL_ANONIMIZADA]",
+                "codigo": "200",
+                "status": "OK",
+                "title": "LARGEN &#8211; LaboratÃ³rio de Recursos GenÃ©ticos",
+                "ip": "[IP_ANONIMIZADO]",
+                "country": "BRAZIL",
+                "sigla": "BR"
+            },
+            "plugins": {
+                "Apache": {
+                    "Google Dorks": "(3)",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "HTML5": {},
+                "HTTPServer": {
+                    "String": "Apache (from server string)"
+                },
+                "JQuery": {
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "MetaGenerator": {
+                    "String": "WordPress 5.2.21"
+                },
+                "Script": {
+                    "String": "text/javascript"
+                },
+                "UncommonHeaders": {
+                    "String": "link (from headers)"
+                },
+                "WordPress": {
+                    "Version": "5.2.21",
+                    "Google Dorks": "(1)",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "X-UA-Compatible": {
+                    "http": "//msdn.microsoft.com/en-us/library/cc817574.aspx",
+                    "String": "IE=10"
+                }
+            },
+            "http_headers": {
+                "Status-Line": "HTTP/1.1 200 OK",
+                "Date": "Fri, 12 Sep 2025 19:12:12 GMT",
+                "Server": [
+                    "Apache",
+                    "Apache"
+                ],
+                "Link": [
+                    "<[URL_ANONIMIZADA] rel=\"[URL_ANONIMIZADA]",
+                    "<[URL_ANONIMIZADA] rel=shortlink"
+                ],
+                "Vary": "Accept-Encoding",
+                "Content-Encoding": "gzip",
+                "Content-Length": "6680",
+                "Connection": "close",
+                "Content-Type": "text/html; charset=UTF-8"
+            },
+            "ferramentas": [
+                "Apache",
+                "HTML5",
+                "HTTPServer[Apache]",
+                "JQuery",
+                "MetaGenerator[WordPress 5.2.21]",
+                "Script[text/javascript]",
+                "UncommonHeaders[link]",
+                "WordPress[5.2.21]",
+                "X-UA-Compatible[IE=10]"
+            ]
+        },
+        "NMAP": {
+            "target": "janis.sti.[TERMO_SENSIVEL].br",
+            "ip": "[IP_ANONIMIZADO]",
+            "status": "up",
+            "ports": [
+                {
+                    "port": 80,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "http",
+                    "version": "Apache httpd"
+                },
+                {
+                    "port": 443,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "ssl/http",
+                    "version": "Apache httpd"
+                },
+                {
+                    "port": 80,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "http",
+                    "version": "Apache httpd"
+                },
+                {
+                    "port": 443,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "ssl/http",
+                    "version": "Apache httpd"
+                }
+            ],
+            "os_info": {}
+        },
+        "GoBuster": [
+            {
+                "diretorio": "/# license, visit [URL_ANONIMIZADA]",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/# Suite 300, San Francisco, California, 94105, USA.",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/# or send a letter to Creative Commons, 171 Second Street,",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/rss",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/home",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/login",
+                "status": 302,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/0",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/feed",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/pub",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/atom",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/c",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/public",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/wp-content",
+                "status": 301,
+                "size": 244,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/p",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/admin",
+                "status": 302,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/Home",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/d",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/f",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/h",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/rss2",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/wp-includes",
+                "status": 301,
+                "size": 245,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/C",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/P",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/F",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/D",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/H",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/page2",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/rdf",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/page1",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/favicon",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/co",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/page3",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/'",
+                "status": 301,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/login",
+                "status": 302,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/admin",
+                "status": 302,
+                "size": 0,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            }
+        ],
+        "DNSRecon": {
+            "alvo": "[URL_ANONIMIZADA]",
+            "dnssec_ativo": false,
+            "registros": [
+                {
+                    "tipo": "A",
+                    "dominio": "[URL_ANONIMIZADA]",
+                    "valor": "[IP_ANONIMIZADO]"
+                }
+            ],
+            "reverso": [
+                {
+                    "arpa": "[IP_ANONIMIZADO].in-addr.arpa",
+                    "dominio": "janis.sti.[TERMO_SENSIVEL].br"
+                }
+            ],
+            "mx_info": "[URL_ANONIMIZADA] has no MX record",
+            "ns_info": "[URL_ANONIMIZADA] has no NS record",
+            "subdominios_encontrados": 0
+        }
+    }
+}

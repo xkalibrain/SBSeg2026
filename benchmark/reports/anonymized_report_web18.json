@@ -1,0 +1,193 @@
+{
+    "[URL_ANONIMIZADA]": {
+        "ResoluÃ§Ã£o DNS": {
+            "[URL_ANONIMIZADA]": "[IP_ANONIMIZADO]"
+        },
+        "WhatWeb Analysis": {
+            "[URL_ANONIMIZADA]": {
+                "code": "200",
+                "status": "OK",
+                "tecnologias": [
+                    "Apache",
+                    "Bootstrap[20120206,4.9.4]",
+                    "Country[BRAZIL][BR]",
+                    "Email[[EMAIL_ANONIMIZADO],[EMAIL_ANONIMIZADO],[EMAIL_ANONIMIZADO],[EMAIL_ANONIMIZADO],[EMAIL_ANONIMIZADO],[EMAIL_ANONIMIZADO]]",
+                    "HTML5",
+                    "HTTPServer[Apache]",
+                    "IP[[IP_ANONIMIZADO]]",
+                    "JQuery[1.12.4]",
+                    "MetaGenerator[WordPress 4.9.4]",
+                    "Script[text/javascript]",
+                    "Title[GPBio &#8211; Grupo de Pesquisa e Desenvolvimento de Processos BiotecnolÃ³gicos]",
+                    "UncommonHeaders[link]",
+                    "WordPress[4.9.4]"
+                ]
+            },
+            "ip_principal": "[IP_ANONIMIZADO]"
+        },
+        "WhoIs": {
+            "Date": "Fri, 12 Sep 2025 14:00:22 GMT",
+            "Server": "Apache",
+            "Link": "<[URL_ANONIMIZADA] rel=\"[URL_ANONIMIZADA]",
+            "Vary": "Accept-Encoding",
+            "Content-Type": "text/html; charset=UTF-8"
+        },
+        "WhatWeb Detailed Analysis": {
+            "summary": {
+                "url": "[URL_ANONIMIZADA]",
+                "codigo": "200",
+                "status": "OK",
+                "title": "GPBio &#8211; Grupo de Pesquisa e Desenvolvimento de Processos BiotecnolÃ³gicos",
+                "ip": "[IP_ANONIMIZADO]",
+                "country": "BRAZIL",
+                "sigla": "BR"
+            },
+            "plugins": {
+                "Apache": {
+                    "Google Dorks": "(3)",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "Bootstrap": {
+                    "Version": "4.9.4",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "Email": {
+                    "syntactically invalid email addresses from mailto": "link",
+                    "mailto": "to catch anti-spam email addresses, eg. bob at",
+                    "expression from \n\thttp": "//[URL_ANONIMIZADA] for valid",
+                    "String": "[EMAIL_ANONIMIZADO],[EMAIL_ANONIMIZADO],[EMAIL_ANONIMIZADO],[EMAIL_ANONIMIZADO],[EMAIL_ANONIMIZADO],[EMAIL_ANONIMIZADO]"
+                },
+                "HTML5": {},
+                "HTTPServer": {
+                    "String": "Apache (from server string)"
+                },
+                "JQuery": {
+                    "Version": "1.12.4",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "MetaGenerator": {
+                    "String": "WordPress 4.9.4"
+                },
+                "Script": {
+                    "String": "text/javascript"
+                },
+                "UncommonHeaders": {
+                    "String": "link (from headers)"
+                },
+                "WordPress": {
+                    "Version": "4.9.4",
+                    "Google Dorks": "(1)",
+                    "Website": "[URL_ANONIMIZADA]"
+                }
+            },
+            "http_headers": {
+                "Status-Line": "HTTP/1.1 200 OK",
+                "Date": "Fri, 12 Sep 2025 14:00:26 GMT",
+                "Server": [
+                    "Apache",
+                    "Apache"
+                ],
+                "Link": "<[URL_ANONIMIZADA] rel=\"[URL_ANONIMIZADA]",
+                "Vary": "Accept-Encoding",
+                "Content-Encoding": "gzip",
+                "Content-Length": "6517",
+                "Connection": "close",
+                "Content-Type": "text/html; charset=UTF-8"
+            },
+            "ferramentas": [
+                "Apache",
+                "Bootstrap[20120206,4.9.4]",
+                "Email[[EMAIL_ANONIMIZADO],[EMAIL_ANONIMIZADO],[EMAIL_ANONIMIZADO],[EMAIL_ANONIMIZADO],[EMAIL_ANONIMIZADO],[EMAIL_ANONIMIZADO]]",
+                "HTML5",
+                "HTTPServer[Apache]",
+                "JQuery[1.12.4]",
+                "MetaGenerator[WordPress 4.9.4]",
+                "Script[text/javascript]",
+                "UncommonHeaders[link]",
+                "WordPress[4.9.4]"
+            ]
+        },
+        "NMAP": {
+            "target": "janis.sti.[TERMO_SENSIVEL].br",
+            "ip": "[IP_ANONIMIZADO]",
+            "status": "up",
+            "ports": [
+                {
+                    "port": 80,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "http",
+                    "version": "Apache httpd"
+                },
+                {
+                    "port": 443,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "ssl/http",
+                    "version": "Apache httpd"
+                },
+                {
+                    "port": 80,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "http",
+                    "version": "Apache httpd"
+                },
+                {
+                    "port": 443,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "ssl/http",
+                    "version": "Apache httpd"
+                }
+            ],
+            "os_info": {}
+        },
+        "GoBuster": [
+            {
+                "diretorio": "/wp-content",
+                "status": 301,
+                "size": 243,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/wp-includes",
+                "status": 301,
+                "size": 244,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/wp-admin",
+                "status": 301,
+                "size": 241,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/wp-admin",
+                "status": 301,
+                "size": 241,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            }
+        ],
+        "DNSRecon": {
+            "alvo": "[URL_ANONIMIZADA]",
+            "dnssec_ativo": false,
+            "registros": [
+                {
+                    "tipo": "A",
+                    "dominio": "[URL_ANONIMIZADA]",
+                    "valor": "[IP_ANONIMIZADO]"
+                }
+            ],
+            "reverso": [
+                {
+                    "arpa": "[IP_ANONIMIZADO].in-addr.arpa",
+                    "dominio": "janis.sti.[TERMO_SENSIVEL].br"
+                }
+            ],
+            "mx_info": "[URL_ANONIMIZADA] has no MX record",
+            "ns_info": "[URL_ANONIMIZADA] has no NS record",
+            "subdominios_encontrados": 0
+        }
+    }
+}

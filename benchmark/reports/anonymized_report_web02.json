@@ -1,0 +1,196 @@
+{
+    "[URL_ANONIMIZADA]": {
+        "ResoluÃ§Ã£o DNS": {
+            "[URL_ANONIMIZADA]": "[IP_ANONIMIZADO]"
+        },
+        "WhatWeb Analysis": {
+            "[URL_ANONIMIZADA]": {
+                "code": "200",
+                "status": "OK",
+                "tecnologias": [
+                    "Apache[2.2.22]",
+                    "Country[BRAZIL][BR]",
+                    "Email[[EMAIL_ANONIMIZADO]]",
+                    "HTML5",
+                    "HTTPServer[Debian Linux][Apache/2.2.22 (Debian)]",
+                    "IP[[IP_ANONIMIZADO]]",
+                    "JQuery[1.12.4]",
+                    "MetaGenerator[WordPress 4.8]",
+                    "PoweredBy[WordPress]",
+                    "Script[text/javascript]",
+                    "Title[CEDECAM &#8211; Centro de DiagnÃ³stico de Enfermidades de Organismos AquÃ¡ticos]",
+                    "UncommonHeaders[link]",
+                    "WordPress[4.8]"
+                ]
+            },
+            "ip_principal": "[IP_ANONIMIZADO]"
+        },
+        "WhoIs": {
+            "Date": "Mon, 08 Sep 2025 18:43:02 GMT",
+            "Server": "Apache/2.2.22 (Debian)",
+            "Location": "[URL_ANONIMIZADA]",
+            "Vary": "Accept-Encoding",
+            "Content-Type": "text/html; charset=UTF-8"
+        },
+        "WhatWeb Detailed Analysis": {
+            "summary": {
+                "url": "[URL_ANONIMIZADA]",
+                "codigo": "301",
+                "status": "Moved Permanently",
+                "title": "<None>",
+                "ip": "[IP_ANONIMIZADO]",
+                "country": "BRAZIL",
+                "sigla": "BR"
+            },
+            "plugins": {
+                "Apache": {
+                    "Version": "2.2.22 (from HTTP Server Header)",
+                    "Google Dorks": "(3)",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "Email": {
+                    "syntactically invalid email addresses from mailto": "link",
+                    "mailto": "to catch anti-spam email addresses, eg. bob at",
+                    "expression from \n\thttp": "//[URL_ANONIMIZADA] for valid",
+                    "String": "[EMAIL_ANONIMIZADO]"
+                },
+                "HTML5": {},
+                "HTTPServer": {
+                    "OS": "Debian Linux",
+                    "String": "Apache/2.2.22 (Debian) (from server string)"
+                },
+                "JQuery": {
+                    "Version": "1.12.4",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "MetaGenerator": {
+                    "String": "WordPress 4.8"
+                },
+                "PoweredBy": {
+                    "String": "WordPress"
+                },
+                "Script": {
+                    "String": "text/javascript"
+                },
+                "UncommonHeaders": {
+                    "String": "link (from headers)"
+                },
+                "WordPress": {
+                    "Version": "4.8",
+                    "Google Dorks": "(1)",
+                    "Website": "[URL_ANONIMIZADA]"
+                }
+            },
+            "http_headers": {
+                "Status-Line": "HTTP/1.1 200 OK",
+                "Date": "Mon, 08 Sep 2025 18:43:09 GMT",
+                "Server": [
+                    "Apache/2.2.22 (Debian)",
+                    "Apache/2.2.22 (Debian)"
+                ],
+                "Link": [
+                    "<[URL_ANONIMIZADA] rel=\"[URL_ANONIMIZADA]",
+                    "<[URL_ANONIMIZADA] rel=shortlink"
+                ],
+                "Vary": "Accept-Encoding",
+                "Content-Encoding": "gzip",
+                "Content-Length": "21037",
+                "Connection": "close",
+                "Content-Type": "text/html; charset=UTF-8"
+            },
+            "ferramentas": [
+                "Apache[2.2.22]",
+                "HTTPServer[Debian Linux][Apache/2.2.22 (Debian)]",
+                "RedirectLocation[[URL_ANONIMIZADA]"
+            ]
+        },
+        "NMAP": {
+            "target": "www2.[TERMO_SENSIVEL].br",
+            "ip": "[IP_ANONIMIZADO]",
+            "status": "up",
+            "ports": [
+                {
+                    "port": 20,
+                    "protocol": "tcp",
+                    "state": "closed",
+                    "service": "ftp-data",
+                    "version": "21/tcp   closed ftp"
+                },
+                {
+                    "port": 80,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "http",
+                    "version": "Apache httpd 2.2.22 ((Debian))"
+                },
+                {
+                    "port": 9102,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "jetdirect?",
+                    "version": "Service detection performed. Please report any incorrect results at [URL_ANONIMIZADA] ."
+                },
+                {
+                    "port": 80,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "http",
+                    "version": "Apache httpd 2.2.22 ((Debian))"
+                }
+            ],
+            "os_info": {}
+        },
+        "GoBuster": [
+            {
+                "diretorio": "/wp-content",
+                "status": 301,
+                "size": 329,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/wp-includes",
+                "status": 301,
+                "size": 330,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/cache",
+                "status": 301,
+                "size": 324,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/wp-admin",
+                "status": 301,
+                "size": 327,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            },
+            {
+                "diretorio": "/wp-admin",
+                "status": 301,
+                "size": 327,
+                "redirecionamento": "[URL_ANONIMIZADA]"
+            }
+        ],
+        "DNSRecon": {
+            "alvo": "[URL_ANONIMIZADA]",
+            "dnssec_ativo": false,
+            "registros": [
+                {
+                    "tipo": "A",
+                    "dominio": "[URL_ANONIMIZADA]",
+                    "valor": "[IP_ANONIMIZADO]"
+                }
+            ],
+            "reverso": [
+                {
+                    "arpa": "[IP_ANONIMIZADO].in-addr.arpa",
+                    "dominio": "www2.[TERMO_SENSIVEL].br"
+                }
+            ],
+            "mx_info": "[URL_ANONIMIZADA] has no MX record",
+            "ns_info": "[URL_ANONIMIZADA] has no NS record",
+            "subdominios_encontrados": 0
+        }
+    }
+}

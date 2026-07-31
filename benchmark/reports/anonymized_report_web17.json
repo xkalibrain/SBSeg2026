@@ -1,0 +1,152 @@
+{
+    "[URL_ANONIMIZADA]": {
+        "ResoluÃ§Ã£o DNS": {
+            "[URL_ANONIMIZADA]": "[IP_ANONIMIZADO]"
+        },
+        "WhatWeb Analysis": {
+            "[URL_ANONIMIZADA]": {
+                "code": "200",
+                "status": "OK",
+                "tecnologias": [
+                    "Apache",
+                    "Cookies[OJSSID]",
+                    "Country[BRAZIL][BR]",
+                    "Google-Analytics[Universal][UA-85994985-2]",
+                    "HTML5",
+                    "HTTPServer[Apache]",
+                    "IP[[IP_ANONIMIZADO]]",
+                    "JQuery[1.11.0]",
+                    "MetaGenerator[Open Journal Systems [IP_ANONIMIZADO]]",
+                    "Script[text/javascript]",
+                    "Title[Geosaberes][Title element contains newline(s)!]"
+                ]
+            },
+            "ip_principal": "[IP_ANONIMIZADO]"
+        },
+        "WhoIs": {
+            "Date": "Fri, 12 Sep 2025 13:04:10 GMT",
+            "Server": "Apache",
+            "Set-Cookie": "OJSSID=m2gkasnejg3rjgkmei4gs7v6u3; path=/; domain=[URL_ANONIMIZADA]",
+            "Location": "[URL_ANONIMIZADA]",
+            "Vary": "Accept-Encoding",
+            "Content-Type": "text/html; charset=UTF-8"
+        },
+        "WhatWeb Detailed Analysis": {
+            "summary": {
+                "url": "[URL_ANONIMIZADA]",
+                "codigo": "302",
+                "status": "Found",
+                "title": "<None>",
+                "ip": "[IP_ANONIMIZADO]",
+                "country": "BRAZIL",
+                "sigla": "BR"
+            },
+            "plugins": {
+                "Apache": {
+                    "Google Dorks": "(3)",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "Cookies": {
+                    "String": "OJSSID"
+                },
+                "Google-Analytics": {
+                    "Version": "Universal",
+                    "Account": "UA-85994985-2",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "HTML5": {},
+                "HTTPServer": {
+                    "String": "Apache (from server string)"
+                },
+                "JQuery": {
+                    "Version": "1.11.0",
+                    "Website": "[URL_ANONIMIZADA]"
+                },
+                "MetaGenerator": {
+                    "String": "Open Journal Systems [IP_ANONIMIZADO]"
+                },
+                "Script": {
+                    "String": "text/javascript"
+                }
+            },
+            "http_headers": {
+                "Status-Line": "HTTP/1.1 200 OK",
+                "Date": "Fri, 12 Sep 2025 13:04:17 GMT",
+                "Server": [
+                    "Apache",
+                    "Apache"
+                ],
+                "Set-Cookie": "OJSSID=3pv6ga2fsvf37ok76mkrle6if4; path=/; domain=[URL_ANONIMIZADA]",
+                "Cache-Control": "no-store",
+                "Vary": "Accept-Encoding",
+                "Content-Encoding": "gzip",
+                "Content-Length": "4590",
+                "Connection": "close",
+                "Content-Type": "text/html; charset=utf-8"
+            },
+            "ferramentas": [
+                "Apache",
+                "Cookies[OJSSID]",
+                "HTTPServer[Apache]",
+                "RedirectLocation[[URL_ANONIMIZADA]"
+            ]
+        },
+        "NMAP": {
+            "target": "janis.sti.[TERMO_SENSIVEL].br",
+            "ip": "[IP_ANONIMIZADO]",
+            "status": "up",
+            "ports": [
+                {
+                    "port": 80,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "http",
+                    "version": "Apache httpd"
+                },
+                {
+                    "port": 443,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "ssl/http",
+                    "version": "Apache httpd"
+                },
+                {
+                    "port": 80,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "http",
+                    "version": "Apache httpd"
+                },
+                {
+                    "port": 443,
+                    "protocol": "tcp",
+                    "state": "open",
+                    "service": "ssl/http",
+                    "version": "Apache httpd"
+                }
+            ],
+            "os_info": {}
+        },
+        "GoBuster": [],
+        "DNSRecon": {
+            "alvo": "[URL_ANONIMIZADA]",
+            "dnssec_ativo": false,
+            "registros": [
+                {
+                    "tipo": "A",
+                    "dominio": "[URL_ANONIMIZADA]",
+                    "valor": "[IP_ANONIMIZADO]"
+                }
+            ],
+            "reverso": [
+                {
+                    "arpa": "[IP_ANONIMIZADO].in-addr.arpa",
+                    "dominio": "janis.sti.[TERMO_SENSIVEL].br"
+                }
+            ],
+            "mx_info": "[URL_ANONIMIZADA] has no MX record",
+            "ns_info": "[URL_ANONIMIZADA] has no NS record",
+            "subdominios_encontrados": 0
+        }
+    }
+}
