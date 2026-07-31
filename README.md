@@ -717,58 +717,59 @@ Essas métricas permitem avaliar não apenas a quantidade de vulnerabilidades id
 
 # Organização dos Experimentos
 
-Os experimentos encontram-se organizados conforme a estrutura abaixo.
+Todos os recursos necessários para a reprodução dos experimentos apresentados no artigo encontram-se organizados no diretório `benchmark`, conforme a estrutura abaixo.
 
 ```text
 benchmark/
 
-├── models/
+├── dataset/
 ├── prompts/
 ├── reports/
-├── outputs/
-├── metrics/
 ├── scripts/
-└── results/
+├── main.py
+└── requirements.txt
 ```
 
-Cada diretório possui uma finalidade específica.
+Cada componente possui uma responsabilidade específica durante a execução do benchmark.
 
-| Diretório | Descrição |
-|------------|-----------|
-| models | Configurações dos modelos |
-| prompts | Prompts utilizados |
-| reports | Relatórios OSINT |
-| outputs | Respostas produzidas |
-| metrics | Resultados das métricas |
-| scripts | Scripts de benchmark |
-| results | Resultados finais |
+| Arquivo/Diretório | Descrição |
+|-------------------|-----------|
+| `dataset/` | Conjunto de dados anonimizado utilizado durante os experimentos, preservando as características necessárias para a reprodução do benchmark sem expor informações sensíveis. |
+| `prompts/` | Prompts utilizados nas etapas de inferência e avaliação dos modelos de linguagem. |
+| `reports/` | Relatórios de entrada utilizados pelo benchmark, derivados das análises realizadas pelo Web xKaliBurr e devidamente anonimizados. |
+| `scripts/` | Scripts auxiliares responsáveis pelas etapas de inferência, avaliação, processamento dos resultados e cálculo das métricas utilizadas no artigo. |
+| `main.py` | Script principal que coordena a execução da *pipeline* experimental do benchmark. |
+| `requirements.txt` | Lista das dependências Python necessárias para executar o benchmark sem a utilização de contêineres Docker. |
 
 ---
 
 # Reproduzindo os Experimentos
 
-Após configurar corretamente o ambiente, a reprodução do benchmark pode ser realizada executando:
+Após concluir a instalação do ambiente, configurar o LM Studio e carregar os modelos de linguagem desejados, acesse o diretório `benchmark` e execute a *pipeline* principal do benchmark:
 
 ```bash
-python benchmark/run_benchmark.py
+python main.py
 ```
 
-O script executará automaticamente todos os modelos configurados.
+O arquivo `main.py` atua como orquestrador da *pipeline* experimental, coordenando automaticamente a execução das etapas de inferência das vulnerabilidades e da avaliação das respostas produzidas pelos modelos de linguagem.
 
-Ao término serão produzidos:
+Para reproduzir integralmente os experimentos apresentados no artigo, recomenda-se:
 
-- respostas individuais;
-- métricas;
-- arquivos CSV;
-- tabelas comparativas;
-- resultados agregados.
+- configurar a lista de modelos de linguagem que participarão do benchmark;
+- definir o parâmetro `ONLY_INFERENCE=False`, habilitando também a etapa de avaliação;
+- utilizar o modelo `gpt-oss-120b` como *LLM Judge*, conforme empregado nos experimentos do artigo.
 
-Todos os resultados serão armazenados em:
+Após a conclusão da execução, os scripts auxiliares presentes no diretório `scripts/` podem ser utilizados para consolidar os resultados produzidos, calcular as métricas do benchmark e gerar os arquivos utilizados nas análises apresentadas no artigo.
 
-```text
-benchmark/results/
-```
+Ao término do processo, serão produzidos automaticamente:
 
+- respostas geradas por cada modelo de linguagem;
+- avaliações realizadas pelo *LLM Judge*;
+- métricas de desempenho;
+- arquivos consolidados em formato CSV;
+- resultados quantitativos utilizados nas tabelas e análises do artigo.
+
+Os arquivos produzidos durante a execução são armazenados automaticamente nos diretórios `outputs/`, `metrics/` e `results/`, permitindo a reprodução completa do benchmark e a validação dos resultados apresentados neste trabalho.
 ---
 
 # Tempo Estimado
