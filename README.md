@@ -173,18 +173,16 @@ O repositório foi organizado de forma a facilitar tanto a utilização da plata
 ```text
 xKaliBrain/
 │
+├── api/                # Recursos Web xKaliBurr
 ├── benchmark/          # Scripts para execução do benchmark
 ├── dataset/            # Conjunto de dados utilizado na pesquisa
 ├── docs/               # Documentação adicional
-├── examples/           # Exemplos de utilização
+├── front/              # Recursos Web xKaliBurr
 ├── inference/          # Scripts de inferência
-├── models/             # Configurações dos modelos
-├── prompts/            # Prompts utilizados pelo xKaliBrain
-├── reports/            # Relatórios OSINT de exemplo
-├── results/            # Resultados experimentais
-├── scripts/            # Scripts auxiliares
-├── README.md
-├── requirements.txt
+├── nginx/              # Recursos Web xKaliBurr
+├── README.md           # Instruções
+├── requirements.txt    # Dependencias
+├── run.sh              # Recursos Web xKaliBurr
 └── LICENSE
 ```
 
