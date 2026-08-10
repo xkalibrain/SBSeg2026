@@ -50,7 +50,129 @@ Diferentemente de scanners tradicionais, o objetivo não é executar testes de e
 
 ---
 
-# Como o xKaliBrain Funciona
+# Selos Considerados
+
+Este artefato é submetido para avaliação considerando os quatro selos previstos pelo processo de avaliação de artefatos do **SBSeg 2026**:
+
+* **Artefatos Disponíveis (SeloD)**;
+* **Artefatos Funcionais (SeloF)**;
+* **Artefatos Sustentáveis (SeloS)**;
+* **Experimentos Reprodutíveis (SeloR)**.
+
+O repositório disponibiliza o código-fonte, a documentação, os scripts de execução, os dados anonimizados, os prompts, os relatórios anonimizados e os recursos necessários para a execução do benchmark. A organização desses componentes foi estruturada de forma a permitir tanto a utilização do artefato quanto a reprodução dos experimentos apresentados no artigo.
+
+As instruções de instalação, configuração, execução e reprodução dos experimentos estão documentadas ao longo deste README, incluindo a configuração do ambiente, a utilização do LM Studio, a execução do Web xKaliBurr e a execução da pipeline de benchmark. A estrutura do diretório `benchmark` concentra os principais recursos necessários à reprodução dos experimentos.
+
+
+# Preocupações com Segurança
+
+A execução do artefato envolve componentes destinados à análise de superfícies de ataque e à interpretação de relatórios produzidos durante atividades de reconhecimento. Por esse motivo, alguns cuidados devem ser observados durante a execução pelos avaliadores.
+
+O **agente LLM não realiza, por si só, testes de exploração ou ataques contra sistemas externos**. Seu funcionamento principal consiste na interpretação de relatórios técnicos previamente produzidos pelo Web xKaliBurr, transformando as evidências coletadas em informações estruturadas sobre possíveis vulnerabilidades.
+
+Entretanto, a reprodução integral do fluxo experimental pode envolver a execução do **Web xKaliBurr**, que utiliza ferramentas de reconhecimento como **Nmap, Gobuster, DIRB, WhatWeb, DNSRecon, cURL e Whois** para coletar informações sobre aplicações e infraestruturas. Essas ferramentas são executadas automaticamente pela plataforma durante a geração dos relatórios utilizados nos experimentos.
+
+Dessa forma, recomenda-se que os avaliadores adotem as seguintes medidas de segurança:
+
+* executar o artefato preferencialmente em uma **máquina virtual, ambiente isolado ou infraestrutura destinada exclusivamente aos experimentos**;
+* não executar atividades de reconhecimento contra sistemas, aplicações ou infraestruturas para as quais não exista autorização explícita;
+* utilizar, sempre que possível, os **relatórios anonimizados disponibilizados no diretório `benchmark/reports/`**, evitando a necessidade de realizar novas atividades de reconhecimento;
+* manter os serviços executados pelo Docker restritos ao ambiente local do avaliador;
+* não disponibilizar publicamente as portas ou serviços utilizados pelo ambiente experimental;
+* utilizar apenas modelos e arquivos de entrada obtidos de fontes confiáveis;
+* evitar o carregamento de informações sensíveis ou credenciais reais nos prompts e arquivos utilizados durante os experimentos.
+
+Para a reprodução dos experimentos apresentados no artigo, **não é necessário realizar novas explorações sobre sistemas externos**, uma vez que o repositório disponibiliza o conjunto de dados anonimizado e os relatórios de entrada utilizados pelo benchmark. Esses recursos preservam as características necessárias para a reprodução dos experimentos sem expor informações sensíveis.
+
+O uso do **LM Studio** também deve ser realizado localmente, mantendo o servidor de inferência acessível apenas pelo ambiente de execução do avaliador. O servidor REST deve permanecer ativo durante a execução do experimento.
+
+
+# Estrutura do Repositório
+
+O repositório foi organizado de forma modular, separando os componentes necessários para a execução da plataforma, a realização das inferências e a reprodução dos experimentos científicos apresentados no artigo.
+
+```text
+xKaliBrain/
+│
+├── api/                # Recursos Web xKaliBurr
+├── benchmark/          # Scripts e recursos para execução do benchmark
+│   ├── dataset/        # Dataset utilizado nos experimentos
+│   ├── prompts/        # Prompts de inferência e avaliação
+│   ├── reports/        # Relatórios de entrada anonimizados
+│   ├── scripts/        # Scripts auxiliares de processamento e avaliação
+│   ├── main.py         # Orquestrador da pipeline experimental
+│   └── requirements.txt# Dependências do benchmark
+├── dataset/            # Conjunto de dados utilizado na pesquisa
+├── docs/               # Documentação adicional
+├── front/              # Recursos Web xKaliBurr
+├── inference/          # Scripts de inferência
+├── nginx/              # Recursos Web xKaliBurr
+├── README.md           # Documentação principal
+├── requirements.txt    # Dependências Python
+├── run.sh              # Script de inicialização
+└── LICENSE             # Licença do projeto
+```
+
+A estrutura do diretório `benchmark` concentra os componentes diretamente relacionados à reprodução dos experimentos. O diretório `dataset` contém o conjunto de dados anonimizado, `prompts` contém os prompts utilizados nas etapas de inferência e avaliação, `reports` contém os relatórios de entrada e `scripts` reúne os scripts auxiliares responsáveis pelo processamento dos resultados e cálculo das métricas. O arquivo `main.py` atua como ponto de entrada e orquestrador da pipeline experimental.
+
+Essa organização permite que os avaliadores identifiquem facilmente os componentes necessários para cada etapa do experimento e possibilita a utilização independente dos recursos de inferência, avaliação e processamento.
+
+
+# Reivindicações
+
+## Reivindicação #01: Disponibilidade do Artefato — SeloD
+
+O código-fonte, a documentação, os scripts de execução, os prompts, os dados anonimizados, os relatórios de entrada e os demais recursos necessários para a execução do artefato encontram-se disponíveis no repositório oficial do projeto.
+
+O README apresenta instruções para instalação, configuração do ambiente, execução do Web xKaliBurr, configuração do LM Studio e reprodução dos experimentos. Além disso, os principais componentes necessários ao benchmark encontram-se organizados no diretório `benchmark`, incluindo dataset, prompts, relatórios, scripts e o programa principal de execução.
+
+Dessa forma, o artefato disponibiliza os componentes necessários para que os avaliadores tenham acesso ao material utilizado no desenvolvimento e na avaliação experimental apresentada no artigo, atendendo aos requisitos do selo **Artefatos Disponíveis (SeloD)**.
+
+## Reivindicação #02: Organização e Sustentabilidade do Artefato — SeloS
+
+O repositório foi estruturado de maneira modular, separando os componentes responsáveis pela aplicação, inferência, benchmark, processamento dos resultados e documentação.
+
+No contexto dos experimentos, o diretório `benchmark` possui uma organização específica para separar dataset, prompts, relatórios, scripts auxiliares e o programa responsável pela execução da pipeline. Essa estrutura facilita a identificação dos componentes e permite modificar ou substituir modelos, prompts e etapas de processamento sem exigir alterações em toda a arquitetura do projeto.
+
+Além disso, o projeto documenta os requisitos de hardware e software, as dependências Python, as etapas de instalação, a configuração do LM Studio e o fluxo completo de execução.
+
+A modularização dos componentes e a documentação disponibilizada contribuem para a manutenção, extensão e reutilização do artefato em trabalhos futuros, atendendo aos requisitos do selo **Artefatos Sustentáveis (SeloS)**.
+
+## Reivindicação #03: Funcionamento da Pipeline de Benchmark — SeloF
+
+O arquivo `benchmark/main.py` atua como ponto de entrada e orquestrador da pipeline experimental, coordenando as etapas de inferência das vulnerabilidades e avaliação das respostas produzidas pelos modelos de linguagem.
+
+Durante a execução, os modelos recebem os relatórios e prompts definidos no benchmark e produzem as respectivas respostas. Quando habilitada a etapa de avaliação, as respostas também podem ser processadas pelo **LLM Judge**, conforme as configurações descritas na documentação do experimento.
+
+Ao final da execução, são produzidos os resultados das inferências, avaliações realizadas pelo LLM Judge, métricas de desempenho e arquivos consolidados em formato CSV. Esses arquivos constituem os resultados intermediários utilizados nas análises experimentais apresentadas no artigo.
+
+A execução bem-sucedida dessa pipeline demonstra o funcionamento dos principais componentes do artefato e permite aos avaliadores verificar diretamente sua funcionalidade, atendendo aos requisitos do selo **Artefatos Funcionais (SeloF)**.
+
+## Reivindicação #04: Reprodução dos Resultados do Benchmark — SeloR
+
+A reprodução dos resultados apresentados no artigo é realizada por meio da execução da pipeline experimental disponibilizada no diretório `benchmark`.
+
+O processo inicia-se com a execução do arquivo `main.py`, responsável por coordenar as etapas de inferência e avaliação dos modelos. Para a reprodução integral dos experimentos, a documentação recomenda configurar os modelos participantes do benchmark, utilizar `ONLY_INFERENCE=False` e utilizar o modelo `gpt-oss-120b` como **LLM Judge**, conforme empregado nos experimentos apresentados no artigo.
+
+Durante a execução, são produzidos os resultados individuais dos modelos, as avaliações realizadas pelo LLM Judge e as métricas utilizadas no benchmark. Os scripts auxiliares disponíveis no diretório `scripts/` podem então ser utilizados para consolidar os resultados, processar as informações obtidas e gerar os arquivos necessários às análises quantitativas.
+
+O benchmark utiliza o mesmo conjunto de relatórios, prompts e critérios de avaliação para os diferentes modelos, permitindo a comparação padronizada entre as arquiteturas avaliadas.
+
+Ao término do processo, são disponibilizados resultados em formatos como CSV, relatórios em Markdown, métricas consolidadas e logs de execução. Esses arquivos permitem verificar a conclusão do experimento e comparar os resultados obtidos com as análises apresentadas no artigo.
+
+Dessa forma, a execução da pipeline disponibilizada permite reproduzir as principais etapas experimentais e obter os dados necessários à validação das métricas e resultados quantitativos reportados no trabalho, atendendo aos requisitos do selo **Experimentos Reprodutíveis (SeloR)**.
+
+# LICENSE
+
+Este projeto é disponibilizado sob a licença **Apache License 2.0**.
+
+```text
+Apache License
+Version 2.0, January 2004
+http://www.apache.org/licenses/
+```
+
+# Como o Projeto Funciona
 
 A arquitetura do projeto foi desenvolvida para transformar grandes relatórios OSINT em análises técnicas estruturadas.
 
@@ -166,29 +288,6 @@ Essa arquitetura permite substituir facilmente modelos de linguagem, modificar e
 
 ---
 
-# Organização do Repositório
-
-O repositório foi organizado de forma a facilitar tanto a utilização da plataforma quanto a reprodução dos experimentos científicos apresentados no artigo.
-
-```text
-xKaliBrain/
-│
-├── api/                # Recursos Web xKaliBurr
-├── benchmark/          # Scripts para execução do benchmark
-├── dataset/            # Conjunto de dados utilizado na pesquisa
-├── docs/               # Documentação adicional
-├── front/              # Recursos Web xKaliBurr
-├── inference/          # Scripts de inferência
-├── nginx/              # Recursos Web xKaliBurr
-├── README.md           # Instruções
-├── requirements.txt    # Dependencias
-├── run.sh              # Recursos Web xKaliBurr
-└── LICENSE
-```
-
-Cada um desses diretórios será detalhado nas próximas seções deste documento.
-
----
 
 # Modelos Avaliados
 
@@ -770,6 +869,39 @@ Ao término do processo, serão produzidos automaticamente:
 - resultados quantitativos utilizados nas tabelas e análises do artigo.
 
 Os arquivos produzidos durante a execução são armazenados automaticamente nos diretórios `outputs/`, `metrics/` e `results/`, permitindo a reprodução completa do benchmark e a validação dos resultados apresentados neste trabalho.
+
+---
+
+
+# Teste Mínimo
+
+Após concluir a instalação do ambiente, recomenda-se realizar um teste mínimo para verificar o funcionamento correto do artefato antes de iniciar a execução completa do benchmark.
+
+Antes da execução, certifique-se de que:
+
+1. o **LM Studio** esteja instalado e em execução;
+2. o servidor local do LM Studio esteja habilitado;
+3. um modelo de linguagem compatível esteja carregado;
+4. o servidor REST do LM Studio esteja disponível para receber as requisições do benchmark.
+
+O projeto utiliza o LM Studio como servidor local de inferência para os modelos Open-Weight.
+
+Para o teste mínimo, recomenda-se utilizar o modelo **`gemma-4-e2b`**, devido ao seu menor custo computacional e à sua capacidade de ser executado em configurações de hardware mais modestas.
+
+A partir do diretório `benchmark`, execute:
+
+```bash
+cd benchmark
+python main.py
+```
+
+O arquivo `main.py` atua como orquestrador da pipeline experimental, coordenando as etapas de inferência e avaliação das respostas produzidas pelos modelos de linguagem.
+
+Para o teste mínimo, recomenda-se executar inicialmente apenas uma inferência, utilizando o modelo `gemma-4-e2b`, antes de iniciar a execução completa do benchmark.
+
+A execução será considerada bem-sucedida caso o modelo processe o relatório de entrada e produza uma resposta estruturada sem ocorrência de erros de comunicação com o servidor local do LM Studio.
+
+Após a validação do funcionamento básico, o avaliador poderá prosseguir para a execução completa do benchmark utilizando os modelos e configurações descritos nas seções seguintes.
 
 ---
 
