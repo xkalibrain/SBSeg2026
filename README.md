@@ -218,7 +218,7 @@ Todo esse processo foi desenvolvido para reduzir a necessidade de interpretaçã
 
 # Principais Características
 
-Atualmente o xKaliBrain oferece:
+Atualmente o Agente oferece:
 
 - Interpretação automatizada de relatórios OSINT;
 - Compatibilidade com Grandes Modelos de Linguagem Open-Weight;
@@ -250,7 +250,7 @@ O projeto possui caráter acadêmico e experimental, sendo destinado ao apoio à
 
 # Arquitetura Geral
 
-O xKaliBrain foi projetado em uma arquitetura modular composta por diferentes componentes independentes.
+O LLM de apoio foi projetado em uma arquitetura modular composta por diferentes componentes independentes.
 
 ```text
                     Agente
@@ -354,7 +354,7 @@ Entre elas:
 - cURL
 - Whois
 
-Essas ferramentas são executadas automaticamente pela plataforma Web xKaliBurr durante a geração dos relatórios utilizados posteriormente pelo xKaliBrain.
+Essas ferramentas são executadas automaticamente pela plataforma Web xKaliBurr durante a geração dos relatórios utilizados posteriormente pelo LLM de interpretação.
 
 
 ---
@@ -441,7 +441,7 @@ Ao término da instalação todas as bibliotecas necessárias estarão disponív
 
 # Instalando o Web xKaliBurr
 
-O xKaliBrain utiliza como entrada relatórios produzidos pela plataforma **Web xKaliBurr**.
+O Agente utiliza como entrada relatórios produzidos pela plataforma **Web xKaliBurr**.
 
 Caso deseje reproduzir integralmente o fluxo experimental apresentado no artigo, é necessário instalar e executar também o Web xKaliBurr.
 
@@ -480,7 +480,7 @@ docker ps
 
 A saída deverá listar todos os serviços do Web xKaliBurr com o status **Up**.
 
-Após essa etapa, a plataforma estará pronta para realizar explorações OSINT e gerar os relatórios utilizados pelo xKaliBrain durante a etapa de interpretação.
+Após essa etapa, a plataforma estará pronta para realizar explorações OSINT e gerar os relatórios utilizados pelo Agente durante a etapa de interpretação.
 
 ---
 
@@ -610,7 +610,7 @@ Entre as informações coletadas encontram-se:
 - informações DNS;
 - metadados da infraestrutura.
 
-Esses relatórios constituem a entrada do xKaliBrain.
+Esses relatórios constituem a entrada do LLM de apoio.
 
 ---
 
