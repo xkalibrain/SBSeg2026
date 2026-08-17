@@ -762,6 +762,8 @@ Para eliminar ambiguidades de versão e variante, a tabela abaixo apresenta os i
 
 O benchmark foi realizado utilizando o mesmo conjunto de relatórios, prompts e critérios de avaliação para todos os modelos. Dessa forma, as diferenças observadas nos resultados estão associadas às características dos modelos e de suas respectivas inferências, mantendo as demais condições experimentais padronizadas.
 
+---
+
 ### LLM Judge
 
 O modelo utilizado exclusivamente para a avaliação das respostas dos modelos candidatos foi o:
@@ -776,6 +778,7 @@ O `gpt-oss-120b` **não faz parte dos 15 modelos candidatos avaliados no benchma
 
 A configuração do modelo Judge encontra-se no arquivo `benchmark/main.py`, enquanto os prompts utilizados na avaliação estão disponíveis no diretório `benchmark/prompts/`.
 
+---
 
 # Métricas Avaliadas
 
@@ -1403,3 +1406,27 @@ Para uma primeira validação do artefato, recomenda-se seguir esta sequência:
 Após a conclusão bem-sucedida do teste mínimo, o avaliador pode substituir `lista_modelos` no `main.py` pelos demais modelos do benchmark e executar a reprodução completa dos experimentos.
 
 Os resultados podem apresentar pequenas variações em relação aos valores reportados no artigo devido a diferenças de hardware, runtime, versões dos modelos e características não determinísticas da inferência. Para minimizar essas diferenças, recomenda-se utilizar as mesmas versões do LM Studio, variantes dos modelos, quantização, prompts, dataset e configuração de temperatura descritas neste README.
+
+
+# Demonstração em Vídeo
+
+Como material complementar às instruções de reprodução, disponibilizamos um vídeo demonstrando a execução do **teste mínimo do artefato** utilizando o modelo compacto `google/gemma-4-e2b`.
+
+A demonstração apresenta as principais etapas práticas da execução, incluindo:
+
+1. preparação do ambiente de execução;
+2. inicialização e configuração do LM Studio;
+3. carregamento do modelo `google/gemma-4-e2b`;
+4. realização da inferência;
+5. geração da resposta estruturada pelo modelo;
+6. verificação do resultado produzido.
+
+O vídeo tem como objetivo auxiliar o avaliador na compreensão do fluxo de execução e na identificação visual do resultado esperado para o teste mínimo.
+
+A configuração do benchmark, incluindo a definição do modelo em `benchmark/main.py`, os comandos necessários para sua execução e os critérios objetivos de sucesso do teste, está documentada na seção **Experimentos** deste README.
+
+**Vídeo de demonstração:**
+[Assista à demonstração do teste mínimo no YouTube](https://www.youtube.com/watch?v=Rkthgu1wU3w&utm_source=chatgpt.com)
+
+O vídeo é um recurso complementar à documentação e não substitui as instruções de reprodução disponibilizadas neste README.
+
