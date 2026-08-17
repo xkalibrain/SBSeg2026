@@ -765,17 +765,6 @@ Para reproduzir os experimentos, recomenda-se utilizar exatamente essa versão d
 
 Após a instalação, o servidor local deve ser habilitado na aba **Developer** do LM Studio e permanecer ativo durante a execução do benchmark.
 
-## Hardware Experimental
-
-Os experimentos do benchmark foram executados utilizando:
-
-| Componente              | Configuração                  |
-| ----------------------- | ----------------------------- |
-| GPU                     | NVIDIA RTX PRO 6000 Blackwell |
-| VRAM                    | 96 GB GDDR7                   |
-| Quantização dos modelos | Q4_K_M                        |
-
-A utilização da mesma configuração de hardware não é obrigatória para executar o artefato, mas diferenças de hardware podem afetar principalmente o tempo de inferência e o comportamento de alocação de memória.
 
 # Modelos Avaliados
 
