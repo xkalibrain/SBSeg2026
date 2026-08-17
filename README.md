@@ -291,11 +291,9 @@ Essa arquitetura permite substituir facilmente modelos de linguagem, modificar e
 
 # Requisitos do Sistema
 
-O projeto foi desenvolvido para ser executado em ambientes Linux, podendo também ser utilizado em Windows por meio do Windows Subsystem for Linux (WSL2) ou utilizando a tecnologia Docker.
+O artefato pode ser executado em diferentes configurações de hardware, dependendo da etapa que se deseja reproduzir. Os requisitos de memória diferem entre a execução básica da plataforma, o teste mínimo de inferência e a execução completa do benchmark. Para validar o funcionamento da pipeline de inferência utilizando o modelo `gemma-4-e2b`, recomenda-se a configuração:
 
-Embora o projeto seja compatível com diferentes configurações de hardware, a utilização de modelos de linguagem maiores exige maior capacidade computacional.
-
-## Configuração Mínima
+## Configuração Mínima — Inferência com Modelo Compacto & Execução da Plataforma
 
 | Componente | Requisito |
 |------------|-----------|
@@ -304,7 +302,7 @@ Embora o projeto seja compatível com diferentes configurações de hardware, a 
 | Git | 2.40+ |
 | Docker | 24+ |
 | Docker Compose | 2+ |
-| RAM | 8 GB |
+| RAM | 16 GB |
 | Espaço em Disco | 15 GB |
 | GPU | Opcional |
 
@@ -321,7 +319,20 @@ Embora o projeto seja compatível com diferentes configurações de hardware, a 
 | GPU | NVIDIA ou Intel ARC compatível com aceleração para LLMs |
 | Espaço em Disco | 40 GB |
 
-O benchmark apresentado no artigo foi executado utilizando modelos Open-Weight de diferentes tamanhos. Modelos compactos podem ser executados apenas em CPU, enquanto modelos maiores apresentam melhor desempenho quando executados utilizando aceleração por GPU.
+---
+
+## Configuração Utilizada nos Experimentos do Artigo
+
+A execução completa do benchmark exige uma configuração mais robusta, uma vez que os experimentos envolvem modelos Open-Weight de diferentes tamanhos. Os resultados apresentados no artigo foram obtidos utilizando uma infraestrutura de alto desempenho, composta por:
+
+| Componente              | Configuração                  |
+| ----------------------- | ----------------------------- |
+| GPU                     | NVIDIA RTX PRO 6000 Blackwell |
+| VRAM                    | 96 GB GDDR7                   |
+| Quantização dos modelos | Q4_K_M                        |
+
+Essa configuração foi utilizada para permitir a execução dos diferentes modelos avaliados no benchmark sob condições experimentais padronizadas.
+
 
 ---
 
@@ -917,17 +928,6 @@ O tempo necessário depende do modelo utilizado.
 Os tempos acima consideram execução local utilizando aceleração por GPU.
 
 Execuções exclusivamente em CPU podem demandar tempos significativamente maiores.
-
----
-
-# Recursos Computacionais
-
-Durante a execução do benchmark recomenda-se:
-
-- mínimo de 16 GB de RAM;
-- aproximadamente 20 GB livres em disco;
-- conexão estável para download inicial dos modelos;
-- GPU opcional, porém recomendada.
 
 ---
 
