@@ -289,21 +289,6 @@ Essa arquitetura permite substituir facilmente modelos de linguagem, modificar e
 ---
 
 
-# Modelos Avaliados
-
-O estudo experimental apresentado no artigo avaliou **15 Grandes Modelos de Linguagem Open-Weight**, abrangendo diferentes arquiteturas, tamanhos e famílias de modelos.
-
-Os modelos pertencem às seguintes famílias:
-
-- Gemma;
-- Qwen;
-- Llama;
-- DeepSeek;
-- Phi;
-- GPT-OSS.
-
----
-
 # Requisitos do Sistema
 
 O projeto foi desenvolvido para ser executado em ambientes Linux, podendo também ser utilizado em Windows por meio do Windows Subsystem for Linux (WSL2) ou utilizando a tecnologia Docker.
@@ -751,48 +736,62 @@ Dessa forma foi possível comparar diretamente o desempenho entre arquiteturas d
 
 ---
 
+# Configuração Experimental
+
+Para garantir a reprodutibilidade dos experimentos apresentados, esta seção especifica as versões das principais ferramentas, a configuração de hardware e as variantes exatas dos modelos utilizadas durante o benchmark.
+
+## LM Studio
+
+Durante os experimentos, o LM Studio foi utilizado como servidor local de inferência para disponibilizar os modelos Open-Weight por meio de uma API compatível com o padrão utilizado pela pipeline experimental.
+
+A versão utilizada nos experimentos foi:
+
+| Componente | Versão utilizada     |
+| ---------- | -------------------- |
+| LM Studio  | **0.4.19 (Build 2)** |
+
+Para reproduzir os experimentos, recomenda-se utilizar exatamente essa versão do LM Studio, evitando a substituição automática pela versão mais recente, uma vez que alterações entre versões podem modificar o comportamento do servidor de inferência, dos runtimes ou da compatibilidade com determinados modelos.
+
+Após a instalação, o servidor local deve ser habilitado na aba **Developer** do LM Studio e permanecer ativo durante a execução do benchmark.
+
+## Hardware Experimental
+
+Os experimentos do benchmark foram executados utilizando:
+
+| Componente              | Configuração                  |
+| ----------------------- | ----------------------------- |
+| GPU                     | NVIDIA RTX PRO 6000 Blackwell |
+| VRAM                    | 96 GB GDDR7                   |
+| Quantização dos modelos | Q4_K_M                        |
+
+A utilização da mesma configuração de hardware não é obrigatória para executar o artefato, mas diferenças de hardware podem afetar principalmente o tempo de inferência e o comportamento de alocação de memória.
+
 # Modelos Avaliados
 
-Foram avaliados quinze Grandes Modelos de Linguagem pertencentes às seguintes famílias:
+O benchmark apresentado no artigo avaliou **15 Grandes Modelos de Linguagem (LLMs) Open-Weight**, pertencentes às famílias Qwen, Gemma, Llama, DeepSeek e Phi.
 
-## Gemma
+Para eliminar ambiguidades de versão e variante, a tabela abaixo apresenta os identificadores específicos utilizados no experimento. Todos os modelos foram executados utilizando a quantização **Q4_K_M**.
 
-- Gemma 3
-- Gemma 4
+|  # | Modelo                             | Tamanho | Quantização |
+| -: | ---------------------------------- | ------: | ----------- |
+|  1 | **Qwen3.6-35B-A3B**                |     35B | Q4_K_M      |
+|  2 | **Gemma-4-26B-A4B**                |     26B | Q4_K_M      |
+|  3 | **Qwen3.6-27B**                    |     27B | Q4_K_M      |
+|  4 | **Llama-4-Scout-17B-16E-Instruct** |    109B | Q4_K_M      |
+|  5 | **Gemma-4-E2B**                    |    5.1B | Q4_K_M      |
+|  6 | **Llama-3.3-70B-Instruct**         |     70B | Q4_K_M      |
+|  7 | **DeepSeek-R1-Distill-Llama-70B**  |     70B | Q4_K_M      |
+|  8 | **DeepSeek-R1-Distill-Qwen-14B**   |     14B | Q4_K_M      |
+|  9 | **DeepSeek-R1-Distill-Qwen-32B**   |     32B | Q4_K_M      |
+| 10 | **Phi-4**                          |     14B | Q4_K_M      |
+| 11 | **Meta-Llama-3.1-8B-Instruct**     |      8B | Q4_K_M      |
+| 12 | **DeepSeek-R1-Distill-Llama-8B**   |      8B | Q4_K_M      |
+| 13 | **Llama-3.2-3B-Instruct**          |      3B | Q4_K_M      |
+| 14 | **Phi-4-Mini-Instruct**            |    3.8B | Q4_K_M      |
+| 15 | **DeepSeek-R1-Distill-Qwen-7B**    |      7B | Q4_K_M      |
 
----
+O benchmark foi realizado utilizando o mesmo conjunto de relatórios, prompts e critérios de avaliação para todos os modelos. Dessa forma, as diferenças observadas nos resultados estão associadas às características dos modelos e de suas respectivas inferências, mantendo as demais condições experimentais padronizadas.
 
-## Qwen
-
-- Qwen 3
-- Qwen 3 Coder
-
----
-
-## Llama
-
-- Llama 3
-- Llama 3.1
-- Llama 3.2
-
----
-
-## DeepSeek
-
-- DeepSeek R1
-- DeepSeek V3
-
----
-
-## Phi
-
-- Phi-4
-
----
-
-## GPT-OSS
-
-- GPT-OSS
 
 
 # Métricas Avaliadas
