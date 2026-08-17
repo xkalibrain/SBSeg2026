@@ -118,50 +118,6 @@ A estrutura do diretório `benchmark` concentra os componentes diretamente relac
 Essa organização permite que os avaliadores identifiquem facilmente os componentes necessários para cada etapa do experimento e possibilita a utilização independente dos recursos de inferência, avaliação e processamento.
 
 
-# Reivindicações
-
-## Reivindicação #01: Disponibilidade do Artefato — SeloD
-
-O código-fonte, a documentação, os scripts de execução, os prompts, os dados anonimizados, os relatórios de entrada e os demais recursos necessários para a execução do artefato encontram-se disponíveis no repositório oficial do projeto.
-
-O README apresenta instruções para instalação, configuração do ambiente, execução do Web xKaliBurr, configuração do LM Studio e reprodução dos experimentos. Além disso, os principais componentes necessários ao benchmark encontram-se organizados no diretório `benchmark`, incluindo dataset, prompts, relatórios, scripts e o programa principal de execução.
-
-Dessa forma, o artefato disponibiliza os componentes necessários para que os avaliadores tenham acesso ao material utilizado no desenvolvimento e na avaliação experimental apresentada no artigo, atendendo aos requisitos do selo **Artefatos Disponíveis (SeloD)**.
-
-## Reivindicação #02: Organização e Sustentabilidade do Artefato — SeloS
-
-O repositório foi estruturado de maneira modular, separando os componentes responsáveis pela aplicação, inferência, benchmark, processamento dos resultados e documentação.
-
-No contexto dos experimentos, o diretório `benchmark` possui uma organização específica para separar dataset, prompts, relatórios, scripts auxiliares e o programa responsável pela execução da pipeline. Essa estrutura facilita a identificação dos componentes e permite modificar ou substituir modelos, prompts e etapas de processamento sem exigir alterações em toda a arquitetura do projeto.
-
-Além disso, o projeto documenta os requisitos de hardware e software, as dependências Python, as etapas de instalação, a configuração do LM Studio e o fluxo completo de execução.
-
-A modularização dos componentes e a documentação disponibilizada contribuem para a manutenção, extensão e reutilização do artefato em trabalhos futuros, atendendo aos requisitos do selo **Artefatos Sustentáveis (SeloS)**.
-
-## Reivindicação #03: Funcionamento da Pipeline de Benchmark — SeloF
-
-O arquivo `benchmark/main.py` atua como ponto de entrada e orquestrador da pipeline experimental, coordenando as etapas de inferência das vulnerabilidades e avaliação das respostas produzidas pelos modelos de linguagem.
-
-Durante a execução, os modelos recebem os relatórios e prompts definidos no benchmark e produzem as respectivas respostas. Quando habilitada a etapa de avaliação, as respostas também podem ser processadas pelo **LLM Judge**, conforme as configurações descritas na documentação do experimento.
-
-Ao final da execução, são produzidos os resultados das inferências, avaliações realizadas pelo LLM Judge, métricas de desempenho e arquivos consolidados em formato CSV. Esses arquivos constituem os resultados intermediários utilizados nas análises experimentais apresentadas no artigo.
-
-A execução bem-sucedida dessa pipeline demonstra o funcionamento dos principais componentes do artefato e permite aos avaliadores verificar diretamente sua funcionalidade, atendendo aos requisitos do selo **Artefatos Funcionais (SeloF)**.
-
-## Reivindicação #04: Reprodução dos Resultados do Benchmark — SeloR
-
-A reprodução dos resultados apresentados no artigo é realizada por meio da execução da pipeline experimental disponibilizada no diretório `benchmark`.
-
-O processo inicia-se com a execução do arquivo `main.py`, responsável por coordenar as etapas de inferência e avaliação dos modelos. Para a reprodução integral dos experimentos, a documentação recomenda configurar os modelos participantes do benchmark, utilizar `ONLY_INFERENCE=False` e utilizar o modelo `gpt-oss-120b` como **LLM Judge**, conforme empregado nos experimentos apresentados no artigo.
-
-Durante a execução, são produzidos os resultados individuais dos modelos, as avaliações realizadas pelo LLM Judge e as métricas utilizadas no benchmark. Os scripts auxiliares disponíveis no diretório `scripts/` podem então ser utilizados para consolidar os resultados, processar as informações obtidas e gerar os arquivos necessários às análises quantitativas.
-
-O benchmark utiliza o mesmo conjunto de relatórios, prompts e critérios de avaliação para os diferentes modelos, permitindo a comparação padronizada entre as arquiteturas avaliadas.
-
-Ao término do processo, são disponibilizados resultados em formatos como CSV, relatórios em Markdown, métricas consolidadas e logs de execução. Esses arquivos permitem verificar a conclusão do experimento e comparar os resultados obtidos com as análises apresentadas no artigo.
-
-Dessa forma, a execução da pipeline disponibilizada permite reproduzir as principais etapas experimentais e obter os dados necessários à validação das métricas e resultados quantitativos reportados no trabalho, atendendo aos requisitos do selo **Experimentos Reprodutíveis (SeloR)**.
-
 # LICENSE
 
 Este projeto é disponibilizado sob a licença **Apache License 2.0**.
@@ -288,6 +244,20 @@ Essa arquitetura permite substituir facilmente modelos de linguagem, modificar e
 
 ---
 
+# Informações básicas
+
+Este repositório contém o artefato associado ao artigo **"Uma Abordagem Baseada em LLMs Open-Weight para Detecção e Classificação de Vulnerabilidades em Relatórios OSINT"**, submetido ao **SBSeg 2026**.
+
+O artefato disponibiliza o código-fonte, os dados, os relatórios anonimizados, os prompts e os scripts necessários para reproduzir os principais experimentos apresentados no artigo. O projeto é composto principalmente por duas partes:
+
+* **Web xKaliBurr:** aplicação responsável pela coleta e organização de informações de superfície de ataque e pela geração dos relatórios técnicos utilizados como entrada;
+* **Benchmark:** conjunto de scripts e recursos utilizados para executar as inferências dos LLMs, avaliar as respostas e calcular as métricas apresentadas no artigo.
+
+Os experimentos do artigo utilizam relatórios técnicos previamente gerados pelo Web xKaliBurr. Para facilitar a reprodução e evitar a necessidade de realizar novas atividades de reconhecimento, os relatórios utilizados nos experimentos são disponibilizados no próprio repositório.
+
+As instruções apresentadas nas seções seguintes distinguem a execução da aplicação, a configuração do ambiente experimental e a reprodução dos resultados do benchmark.
+
+---
 
 # Requisitos do Sistema
 
@@ -747,9 +717,9 @@ Dessa forma foi possível comparar diretamente o desempenho entre arquiteturas d
 
 ---
 
-# Configuração Experimental
+# Dependências do Benchmark
 
-Para garantir a reprodutibilidade dos experimentos apresentados, esta seção especifica as versões das principais ferramentas, a configuração de hardware e as variantes exatas dos modelos utilizadas durante o benchmark.
+Além das dependências de software apresentadas nas seções de instalação e requisitos do sistema, a reprodução dos experimentos com LLMs requer um servidor local de inferência e os modelos utilizados no benchmark.
 
 ## LM Studio
 
@@ -766,7 +736,7 @@ Para reproduzir os experimentos, recomenda-se utilizar exatamente essa versão d
 Após a instalação, o servidor local deve ser habilitado na aba **Developer** do LM Studio e permanecer ativo durante a execução do benchmark.
 
 
-# Modelos Avaliados
+## Modelos Avaliados
 
 O benchmark apresentado no artigo avaliou **15 Grandes Modelos de Linguagem (LLMs) Open-Weight**, pertencentes às famílias Qwen, Gemma, Llama, DeepSeek e Phi.
 
@@ -792,6 +762,19 @@ Para eliminar ambiguidades de versão e variante, a tabela abaixo apresenta os i
 
 O benchmark foi realizado utilizando o mesmo conjunto de relatórios, prompts e critérios de avaliação para todos os modelos. Dessa forma, as diferenças observadas nos resultados estão associadas às características dos modelos e de suas respectivas inferências, mantendo as demais condições experimentais padronizadas.
 
+### LLM Judge
+
+O modelo utilizado exclusivamente para a avaliação das respostas dos modelos candidatos foi o:
+
+| Componente  | Configuração                                   |
+| ----------- | ---------------------------------------------- |
+| LLM Judge   | **gpt-oss-120b**                               |
+| Função      | Avaliação das respostas dos modelos candidatos |
+| Temperature | **0.0**                                        |
+
+O `gpt-oss-120b` **não faz parte dos 15 modelos candidatos avaliados no benchmark**. Ele é utilizado somente como LLM Judge na etapa de avaliação automática.
+
+A configuração do modelo Judge encontra-se no arquivo `benchmark/main.py`, enquanto os prompts utilizados na avaliação estão disponíveis no diretório `benchmark/prompts/`.
 
 
 # Métricas Avaliadas
@@ -841,7 +824,62 @@ Cada componente possui uma responsabilidade específica durante a execução do 
 
 ---
 
-# Reproduzindo os Experimentos
+# Reivindicações
+
+Esta seção apresenta as principais reivindicações empíricas avaliadas no artigo e os resultados experimentais que podem ser verificados por meio do artefato disponibilizado neste repositório.
+
+## Reivindicação 1 — Desempenho dos modelos Open-Weight
+
+O benchmark demonstra diferenças de desempenho entre os modelos Open-Weight avaliados na tarefa de detecção e classificação de vulnerabilidades em relatórios OSINT.
+
+Entre os 15 modelos avaliados, o **Qwen3.6-35B-A3B apresentou o maior F1-Score**, com **72.0%**, enquanto o **Gemma-4-26B-A4B apresentou a maior Precision**, com **96.2%**.
+
+Os principais resultados reportados no artigo são:
+
+| Modelo                         |  F1-Score | Recall | Precision |
+| ------------------------------ | --------: | -----: | --------: |
+| Qwen3.6-35B-A3B                | **72.0%** |  60.9% |     88.0% |
+| Gemma-4-26B-A4B                |     68.6% |  53.4% | **96.2%** |
+| Qwen3.6-27B                    |     65.4% |  51.8% |     88.9% |
+| Llama-4-Scout-17B-16E-Instruct |     61.7% |  46.6% |     91.3% |
+| Gemma-4-E2B                    |     61.0% |  44.7% |     96.0% |
+
+A reprodução dessa reivindicação é realizada por meio do benchmark disponibilizado no diretório `benchmark/`.
+
+## Reivindicação 2 — Desempenho do modelo compacto
+
+O experimento demonstra que um modelo de menor escala pode apresentar desempenho competitivo na tarefa avaliada.
+
+O **Gemma-4-E2B**, utilizado como modelo compacto no estudo, apresentou:
+
+* **F1-Score:** 61.0%;
+* **Recall:** 44.7%;
+* **Precision:** 96.0%.
+
+Esses resultados demonstram que o modelo compacto apresenta desempenho competitivo, especialmente em Precision, quando comparado aos demais modelos avaliados.
+
+A reprodução dessa reivindicação utiliza o modelo `google/gemma-4-e2b` e os recursos disponibilizados no diretório `benchmark/`.
+
+## Reivindicação 3 — Comparação entre análise humana e LLM
+
+O estudo também comparou o desempenho do modelo de linguagem com a análise realizada por participantes humanos.
+
+O experimento contou com **12 participantes**, que realizaram a interpretação e classificação dos relatórios utilizados no estudo.
+
+Na comparação apresentada no artigo:
+
+* o **Recall médio dos participantes foi aproximadamente 0.70**;
+* o **Recall do Gemma foi aproximadamente 0.49**;
+* os participantes apresentaram Recall superior ao modelo em **9 dos 12 casos avaliados**.
+
+Esses resultados indicam que, na configuração experimental utilizada, os participantes humanos apresentaram maior capacidade de recuperação das vulnerabilidades presentes nos relatórios.
+
+A reprodução da parte computacional dessa reivindicação utiliza os mesmos dados e procedimentos disponibilizados no diretório `benchmark/`. A reprodução integral da avaliação humana depende dos registros correspondentes às avaliações realizadas pelos participantes.
+
+
+---
+
+# EXPERIMENTOS
 
 Esta seção descreve o procedimento necessário para reproduzir os experimentos apresentados no artigo, incluindo a configuração do ambiente Python, a execução do benchmark, a configuração do LLM Judge, o teste mínimo de funcionamento e a identificação dos arquivos de saída esperados.
 
