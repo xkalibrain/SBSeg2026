@@ -843,92 +843,525 @@ Cada componente possui uma responsabilidade específica durante a execução do 
 
 # Reproduzindo os Experimentos
 
-Após concluir a instalação do ambiente, configurar o LM Studio e carregar os modelos de linguagem desejados, acesse o diretório `benchmark` e execute a *pipeline* principal do benchmark:
+Esta seção descreve o procedimento necessário para reproduzir os experimentos apresentados no artigo, incluindo a configuração do ambiente Python, a execução do benchmark, a configuração do LLM Judge, o teste mínimo de funcionamento e a identificação dos arquivos de saída esperados.
 
-```bash
-python main.py
+Todos os recursos necessários para a reprodução estão concentrados no diretório `benchmark/`, incluindo:
+
+```text
+benchmark/
+├── dataset/       # Dataset utilizado na avaliação
+├── prompts/       # Prompts de inferência e avaliação
+├── reports/       # Relatórios de entrada
+├── scripts/       # Scripts auxiliares
+├── main.py        # Ponto de entrada do benchmark
+└── requirements.txt
 ```
 
-O arquivo `main.py` atua como orquestrador da *pipeline* experimental, coordenando automaticamente a execução das etapas de inferência das vulnerabilidades e da avaliação das respostas produzidas pelos modelos de linguagem.
+## 1. Configuração do Ambiente Python
 
-Para reproduzir integralmente os experimentos apresentados no artigo, recomenda-se:
+Recomenda-se utilizar um ambiente virtual Python isolado para evitar conflitos entre as dependências do benchmark e outras bibliotecas instaladas no sistema.
 
-- configurar a lista de modelos de linguagem que participarão do benchmark;
-- definir o parâmetro `ONLY_INFERENCE=False`, habilitando também a etapa de avaliação;
-- utilizar o modelo `gpt-oss-120b` como *LLM Judge*, conforme empregado nos experimentos do artigo.
+A partir da raiz do repositório:
 
-Após a conclusão da execução, os scripts auxiliares presentes no diretório `scripts/` podem ser utilizados para consolidar os resultados produzidos, calcular as métricas do benchmark e gerar os arquivos utilizados nas análises apresentadas no artigo.
+```bash
+cd benchmark
+python3 -m venv .venv
+```
 
-Ao término do processo, serão produzidos automaticamente:
+Ative o ambiente virtual.
 
-- respostas geradas por cada modelo de linguagem;
-- avaliações realizadas pelo *LLM Judge*;
-- métricas de desempenho;
-- arquivos consolidados em formato CSV;
-- resultados quantitativos utilizados nas tabelas e análises do artigo.
+### Linux / macOS
 
-Os arquivos produzidos durante a execução são armazenados automaticamente nos diretórios `outputs/`, `metrics/` e `results/`, permitindo a reprodução completa do benchmark e a validação dos resultados apresentados neste trabalho.
+```bash
+source .venv/bin/activate
+```
 
----
+### Windows
 
+```powershell
+.venv\Scripts\activate
+```
 
-# Teste Mínimo
+Depois, instale as dependências utilizadas pelo benchmark:
 
-Após concluir a instalação do ambiente, recomenda-se realizar um teste mínimo para verificar o funcionamento correto do artefato antes de iniciar a execução completa do benchmark.
+```bash
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
 
-Antes da execução, certifique-se de que:
+Verifique se o interpretador utilizado pertence ao ambiente virtual:
 
-1. o **LM Studio** esteja instalado e em execução;
-2. o servidor local do LM Studio esteja habilitado;
-3. um modelo de linguagem compatível esteja carregado;
-4. o servidor REST do LM Studio esteja disponível para receber as requisições do benchmark.
+```bash
+which python
+```
 
-O projeto utiliza o LM Studio como servidor local de inferência para os modelos Open-Weight.
+No Windows:
 
-Para o teste mínimo, recomenda-se utilizar o modelo **`gemma-4-e2b`**, devido ao seu menor custo computacional e à sua capacidade de ser executado em configurações de hardware mais modestas.
+```powershell
+where python
+```
 
-A partir do diretório `benchmark`, execute:
+O caminho apresentado deve apontar para `benchmark/.venv/`.
+
+## 2. Configuração do LM Studio
+
+Os experimentos utilizam o LM Studio como servidor local de inferência.
+
+A versão utilizada nos experimentos é:
+
+| Componente | Versão             |
+| ---------- | ------------------ |
+| LM Studio  | **0.4.19 Build 2** |
+
+Após instalar o LM Studio:
+
+1. abra o aplicativo;
+2. acesse a aba **Developer**;
+3. habilite o servidor local;
+4. carregue o modelo que será utilizado;
+5. mantenha o servidor REST ativo durante a execução.
+
+A comunicação do benchmark com o LM Studio é realizada por meio da variável `MACHINE_URL`. O código utiliza a API compatível com OpenAI disponibilizada pelo LM Studio.
+
+Por padrão, o endpoint local esperado é:
+
+```text
+http://127.0.0.1:1234/v1
+```
+
+Configure a variável de ambiente antes da execução:
+
+### Linux / macOS
+
+```bash
+export MACHINE_URL="http://127.0.0.1:1234/v1"
+```
+
+### Windows PowerShell
+
+```powershell
+$env:MACHINE_URL="http://127.0.0.1:1234/v1"
+```
+
+A implementação dessa comunicação está disponível em `benchmark/scripts/utils.py`.
+
+## 3. Teste Mínimo
+
+Antes de reproduzir o benchmark completo, recomenda-se executar o teste mínimo disponibilizado no `benchmark/main.py`.
+
+A configuração atual do arquivo `main.py` já está preparada para utilizar exclusivamente o modelo:
+
+```python
+lista_modelos = ["google/gemma-4-e2b"]
+```
+
+e executar também a etapa de avaliação:
+
+```python
+ONLY_INFERENCE = False
+```
+
+O modelo utilizado como LLM Judge é definido como:
+
+```python
+modelo_judge = "gpt-oss-120b"
+```
+
+Portanto, para realizar o teste mínimo, não é necessário modificar a lista de modelos. Basta executar:
 
 ```bash
 cd benchmark
 python main.py
 ```
 
-O arquivo `main.py` atua como orquestrador da pipeline experimental, coordenando as etapas de inferência e avaliação das respostas produzidas pelos modelos de linguagem.
+### O que o teste mínimo executa?
 
-Para o teste mínimo, recomenda-se executar inicialmente apenas uma inferência, utilizando o modelo `gemma-4-e2b`, antes de iniciar a execução completa do benchmark.
+O teste mínimo utiliza **um único modelo candidato**, `google/gemma-4-e2b`, sobre os relatórios disponibilizados em `benchmark/reports/`.
 
-A execução será considerada bem-sucedida caso o modelo processe o relatório de entrada e produza uma resposta estruturada sem ocorrência de erros de comunicação com o servidor local do LM Studio.
+O arquivo `main.py` percorre a lista de modelos configurada e chama `inferencia_llms()` para cada modelo. A função de inferência, por sua vez, percorre os relatórios disponíveis no diretório `benchmark/reports/`, ignorando os arquivos que contêm `_inter` no nome.
 
-Após a validação do funcionamento básico, o avaliador poderá prosseguir para a execução completa do benchmark utilizando os modelos e configurações descritos nas seções seguintes.
+Assim, "teste mínimo" refere-se à utilização de **um único modelo candidato**, e não à execução de apenas uma chamada de inferência. Essa configuração reduz o custo computacional em relação ao benchmark completo, mantendo todas as etapas necessárias para verificar o funcionamento da pipeline.
 
----
+## 4. Parâmetros de Inferência
 
-# Tempo Estimado
+As inferências dos modelos candidatos utilizam a API compatível com OpenAI disponibilizada pelo LM Studio.
 
-O tempo necessário depende do modelo utilizado.
+A configuração empregada pelo código é:
 
-| Modelo | Tempo Médio |
-|----------|------------|
-| Compactos | 1–5 minutos |
-| Médios | 5–20 minutos |
-| Grandes | 20–60 minutos |
+| Parâmetro   | Valor                              |
+| ----------- | ---------------------------------- |
+| Modelo      | Definido em `lista_modelos`        |
+| Temperature | **0.0**                            |
+| API         | OpenAI-compatible API              |
+| Endpoint    | Definido por `MACHINE_URL`         |
+| Entrada     | Relatórios em `benchmark/reports/` |
 
-Os tempos acima consideram execução local utilizando aceleração por GPU.
+O prompt de sistema utilizado pelo modelo candidato está definido diretamente em:
 
-Execuções exclusivamente em CPU podem demandar tempos significativamente maiores.
+```text
+benchmark/scripts/executa_predicao_LLMs.py
+```
 
----
+O modelo recebe o relatório técnico como mensagem de usuário e deve produzir uma resposta estruturada em JSON.
 
-# Validação dos Resultados
+## 5. Estrutura Esperada da Resposta do Modelo
 
-Ao término da execução, verifique se foram gerados:
+A execução é considerada válida quando o modelo produz uma resposta que pode ser interpretada como um objeto JSON válido contendo a chave `findings_list`.
 
-- arquivos CSV;
-- relatórios em Markdown;
-- métricas consolidadas;
-- logs de execução.
+A estrutura esperada é:
 
-Esses artefatos confirmam que o benchmark foi concluído corretamente.
+```json
+{
+  "findings_list": [
+    {
+      "finding": "Short name of the finding",
+      "macro_id": "MACRO 01",
+      "justification": "Brief explanation based on the macro definition"
+    }
+  ]
+}
+```
 
----
+Cada elemento de `findings_list` representa uma vulnerabilidade identificada pelo modelo.
+
+Os campos esperados são:
+
+| Campo           | Descrição                                  |
+| --------------- | ------------------------------------------ |
+| `finding`       | Nome ou descrição resumida do achado       |
+| `macro_id`      | Categoria macro atribuída ao achado        |
+| `justification` | Justificativa técnica para a classificação |
+
+As cinco categorias possíveis são:
+
+* `MACRO 01` — Information Disclosure;
+* `MACRO 02` — Directory Traversal;
+* `MACRO 03` — Outdated Software;
+* `MACRO 04` — Infrastructure Disclosure;
+* `MACRO 05` — Weak SSL/TLS Configuration.
+
+O código valida a resposta utilizando `extract_json_from_llm_response()`. Caso a resposta não esteja inicialmente em JSON válido, o benchmark utiliza um prompt adicional para solicitar a correção do formato.
+
+## 6. Arquivo de Saída da Inferência
+
+Após a execução, as respostas são armazenadas no diretório:
+
+```text
+benchmark/models_predictions/
+```
+
+Para o teste mínimo com `google/gemma-4-e2b`, o arquivo esperado é:
+
+```text
+benchmark/models_predictions/results_google_gemma-4-e2b.json
+```
+
+O arquivo contém uma lista de resultados, com uma entrada para cada relatório processado.
+
+A estrutura geral é:
+
+```json
+[
+  {
+    "target": "nome_do_relatorio.txt",
+    "results": {
+      "findings_list": [
+        {
+          "finding": "...",
+          "macro_id": "MACRO 01",
+          "justification": "..."
+        }
+      ]
+    },
+    "correct_format": true,
+    "inference_time": 12.34,
+    "prompt_tokens": 1234,
+    "completion_tokens": 256,
+    "total_tokens": 1490
+  }
+]
+```
+
+O avaliador pode, portanto, verificar objetivamente o sucesso da inferência confirmando:
+
+1. a existência do arquivo `results_google_gemma-4-e2b.json`;
+2. a existência de uma entrada para os relatórios processados;
+3. a presença do campo `results.findings_list`;
+4. a presença dos campos `finding`, `macro_id` e `justification`;
+5. o valor `correct_format: true`.
+
+## 7. LLM Judge
+
+Quando `ONLY_INFERENCE = False`, a pipeline executa uma segunda etapa utilizando um LLM Judge para avaliar as vulnerabilidades produzidas pelo modelo candidato.
+
+No experimento, o modelo utilizado como Judge é:
+
+```text
+gpt-oss-120b
+```
+
+A configuração está definida no arquivo:
+
+```text
+benchmark/main.py
+```
+
+por meio de:
+
+```python
+modelo_judge = "gpt-oss-120b"
+```
+
+O Judge recebe dois elementos principais:
+
+1. a vulnerabilidade produzida pelo modelo candidato;
+2. as vulnerabilidades correspondentes presentes no dataset ouro.
+
+O prompt utilizado pelo experimento é:
+
+```text
+SYSTEM_PROMPT_AVALIADOR_CAND2
+```
+
+definido em:
+
+```text
+benchmark/prompts/prompts_judge.py
+```
+
+### Parâmetros do LLM Judge
+
+| Parâmetro         | Configuração                      |
+| ----------------- | --------------------------------- |
+| Modelo            | `gpt-oss-120b`                    |
+| Temperature       | **0.0**                           |
+| Prompt de sistema | `SYSTEM_PROMPT_AVALIADOR_CAND2`   |
+| Entrada           | Predição do modelo + dataset ouro |
+| Formato esperado  | Dois objetos JSON                 |
+
+O uso de `temperature = 0.0` busca reduzir a variabilidade das avaliações entre execuções.
+
+### Estrutura esperada da resposta do Judge
+
+O Judge deve retornar dois objetos JSON:
+
+```json
+{"veredito": "CORRETO"}
+{"ids_ouro_correspondentes": [5]}
+```
+
+Quando a predição não possui correspondência no dataset ouro:
+
+```json
+{"veredito": "INCORRETO"}
+{"ids_ouro_correspondentes": []}
+```
+
+O campo `veredito` indica se a vulnerabilidade predita corresponde a uma vulnerabilidade do dataset ouro.
+
+O campo `ids_ouro_correspondentes` contém os identificadores das vulnerabilidades correspondentes no dataset ouro, com no máximo dois IDs.
+
+Caso o Judge produza uma resposta fora do formato esperado, a implementação realiza uma segunda chamada ao mesmo modelo utilizando `SYSTEM_PROMPT_CORRIGE_JSON` para solicitar a correção da resposta.
+
+## 8. Arquivos Produzidos pelo LLM Judge
+
+As avaliações produzidas pelo Judge são armazenadas em:
+
+```text
+benchmark/judge_evaluations/
+```
+
+Para o modelo `google/gemma-4-e2b`, o arquivo esperado é:
+
+```text
+benchmark/judge_evaluations/automatic_evaluations_google_gemma-4-e2b.json
+```
+
+O arquivo contém as avaliações agrupadas por target e registra, entre outras informações:
+
+```json
+{
+  "evaluation_metadata": {
+    "modelo_preditor": "google/gemma-4-e2b",
+    "modelo_judge": "gpt-oss-120b"
+  },
+  "rotulacao": "CORRETO",
+  "ids_correspondentes": [5]
+}
+```
+
+Além disso, o processo registra informações auxiliares em:
+
+```text
+benchmark/debug.log
+```
+
+## 9. Cálculo das Métricas
+
+Após a execução do Judge, as métricas podem ser calculadas pelo script:
+
+```text
+benchmark/scripts/calcula_metrica_judge.py
+```
+
+O cálculo considera:
+
+* True Positives (TP);
+* False Positives (FP);
+* False Negatives (FN);
+* Precision;
+* Recall;
+* F1-Score.
+
+As métricas são calculadas a partir das correspondências identificadas pelo LLM Judge entre as predições e o dataset ouro.
+
+O resultado é salvo em:
+
+```text
+benchmark/metric_results/
+```
+
+Para o modelo `google/gemma-4-e2b`, o arquivo esperado é:
+
+```text
+benchmark/metric_results/prediction_metrics___preditor_google_gemma-4-e2b.json
+```
+
+A estrutura contém:
+
+```json
+{
+  "dataset_size": 0,
+  "predictions_size": 0,
+  "TP": 0,
+  "FP": 0,
+  "FN": 0,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0
+}
+```
+
+Os valores serão preenchidos de acordo com as predições e avaliações produzidas durante a execução.
+
+## 10. Reprodução do Benchmark Completo
+
+Depois de validar o teste mínimo, a lista de modelos em:
+
+```text
+benchmark/main.py
+```
+
+pode ser substituída pela lista completa dos modelos avaliados no artigo.
+
+A execução integrada segue o fluxo:
+
+```text
+Relatórios
+    │
+    ▼
+Modelo candidato
+    │
+    ▼
+models_predictions/
+    │
+    ▼
+LLM Judge
+    │
+    ▼
+judge_evaluations/
+    │
+    ▼
+Cálculo das métricas
+    │
+    ▼
+metric_results/
+    │
+    ▼
+Consolidação dos resultados
+```
+
+Para executar somente a etapa de inferência, utilize:
+
+```python
+ONLY_INFERENCE = True
+```
+
+Para executar inferência, avaliação pelo Judge e cálculo das métricas:
+
+```python
+ONLY_INFERENCE = False
+```
+
+## 11. Relação entre Scripts e Resultados
+
+A seguinte tabela permite identificar diretamente qual componente deve ser utilizado para reproduzir cada etapa experimental.
+
+| Etapa / Resultado                 | Arquivo                                      | Principal saída                                  |
+| --------------------------------- | -------------------------------------------- | ------------------------------------------------ |
+| Inferência dos modelos            | `benchmark/scripts/executa_predicao_LLMs.py` | `models_predictions/results_*.json`              |
+| Avaliação pelo LLM Judge          | `benchmark/scripts/llm_avaliador.py`         | `judge_evaluations/automatic_evaluations_*.json` |
+| Cálculo de Precision, Recall e F1 | `benchmark/scripts/calcula_metrica_judge.py` | `metric_results/prediction_metrics_*.json`       |
+| Consolidação do benchmark         | `benchmark/scripts/analise_resultados.py`    | `resultados_benchmark.csv`                       |
+| Processamento dos valores CVSS    | `benchmark/scripts/coleta_cvss_scores.py`    | Dados utilizados na análise CVSS                 |
+| Orquestração completa             | `benchmark/main.py`                          | Execução integrada das etapas anteriores         |
+
+## 12. Critérios de Sucesso do Teste Mínimo
+
+O teste mínimo é considerado bem-sucedido quando o avaliador consegue verificar a execução completa da pipeline para o modelo `google/gemma-4-e2b`.
+
+Os seguintes artefatos devem estar presentes:
+
+```text
+benchmark/
+├── models_predictions/
+│   └── results_google_gemma-4-e2b.json
+│
+├── judge_evaluations/
+│   └── automatic_evaluations_google_gemma-4-e2b.json
+│
+├── metric_results/
+│   └── prediction_metrics___preditor_google_gemma-4-e2b.json
+│
+└── debug.log
+```
+
+Além da existência dos arquivos, o avaliador deve verificar:
+
+* `correct_format` igual a `true` nas predições;
+* presença de `findings_list` nas respostas;
+* presença dos campos `finding`, `macro_id` e `justification`;
+* presença de `veredito` e `ids_ouro_correspondentes` nas avaliações do Judge;
+* geração do arquivo de métricas contendo `precision`, `recall` e `f1`.
+
+Esses critérios permitem verificar objetivamente que o modelo foi executado, que a resposta estruturada foi produzida, que a avaliação pelo Judge foi realizada e que as métricas foram calculadas.
+
+## 13. Fluxo Recomendado para os Avaliadores
+
+Para uma primeira validação do artefato, recomenda-se seguir esta sequência:
+
+```text
+1. Criar o ambiente virtual Python
+        ↓
+2. Instalar benchmark/requirements.txt
+        ↓
+3. Configurar o LM Studio 0.4.19 Build 2
+        ↓
+4. Carregar google/gemma-4-e2b
+        ↓
+5. Verificar MACHINE_URL
+        ↓
+6. Executar python main.py
+        ↓
+7. Verificar models_predictions/
+        ↓
+8. Verificar judge_evaluations/
+        ↓
+9. Verificar metric_results/
+        ↓
+10. Validar os campos JSON descritos nesta seção
+```
+
+Após a conclusão bem-sucedida do teste mínimo, o avaliador pode substituir `lista_modelos` no `main.py` pelos demais modelos do benchmark e executar a reprodução completa dos experimentos.
+
+Os resultados podem apresentar pequenas variações em relação aos valores reportados no artigo devido a diferenças de hardware, runtime, versões dos modelos e características não determinísticas da inferência. Para minimizar essas diferenças, recomenda-se utilizar as mesmas versões do LM Studio, variantes dos modelos, quantização, prompts, dataset e configuração de temperatura descritas neste README.
