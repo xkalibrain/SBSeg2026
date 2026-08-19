@@ -108,7 +108,6 @@ xKaliBrain/
 ├── inference/          # Scripts de inferência
 ├── nginx/              # Recursos Web xKaliBurr
 ├── README.md           # Documentação principal
-├── requirements.txt    # Dependências Python
 ├── run.sh              # Script de inicialização
 └── LICENSE             # Licença do projeto
 ```
@@ -393,12 +392,12 @@ docker --version
 
 ---
 
-## 5. Instalando as Dependências Python
+## 5. Instalando as Dependências do Web xKaliBurr
 
 Execute:
 
 ```bash
-pip install -r requirements.txt
+pip install -r api/requirements.txt
 ```
 
 Ao término da instalação todas as bibliotecas necessárias estarão disponíveis.
@@ -434,7 +433,7 @@ O script irá:
 - iniciar automaticamente os containers Docker necessários;
 - configurar o ambiente da aplicação;
 - inicializar os serviços do Web xKaliBurr;
-- disponibilizar a interface Web para utilização em seu [local host](http://localhost/).
+- disponibilizar a interface Web para utilização em seu [localhost](http://localhost/).
 
 Aguarde a conclusão da inicialização.
 
@@ -458,7 +457,9 @@ Durante os experimentos utilizou-se o **LM Studio** como servidor de inferência
 
 ## Instalando o LM Studio
 
-Faça o download da versão mais recente diretamente no site oficial.
+Faça o download do LM Studio através da página oficial:
+
+https://lmstudio.ai/download
 
 Após a instalação:
 
@@ -725,13 +726,29 @@ Além das dependências de software apresentadas nas seções de instalação e 
 
 Durante os experimentos, o LM Studio foi utilizado como servidor local de inferência para disponibilizar os modelos Open-Weight por meio de uma API compatível com o padrão utilizado pela pipeline experimental.
 
-A versão utilizada nos experimentos foi:
+A versão utilizada originalmente nos experimentos foi:
 
 | Componente | Versão utilizada     |
 | ---------- | -------------------- |
 | LM Studio  | **0.4.19 (Build 2)** |
 
-Para reproduzir os experimentos, recomenda-se utilizar exatamente essa versão do LM Studio, evitando a substituição automática pela versão mais recente, uma vez que alterações entre versões podem modificar o comportamento do servidor de inferência, dos runtimes ou da compatibilidade com determinados modelos.
+O instalador da versão **LM Studio 0.4.19 (Build 2)** utilizada nos experimentos também está disponível para download no repositório do artefato:
+
+[Download do LM Studio 0.4.19 (Build 2)](https://drive.google.com/drive/folders/1_gPzU69gWKZCSE-VQmoVDVxnKyCvKU7J?usp=sharing)
+
+### Versões Validadas
+
+Para facilitar a reprodução do artefato, as seguintes versões foram utilizadas e validadas durante os testes de reprodução:
+
+| Componente | Versão validada |
+|---|---|
+| Python | 3.13.5 |
+| LM Studio (versão mais recente em 19/08/2026) | 0.4.21 Build 2 |
+| LM Studio (versão original dos experimentos) | 0.4.19 Build 2 |
+| Docker | 24+ |
+| Docker Compose | 2+ |
+
+A reprodução dos experimentos foi validada tanto com a versão original **0.4.19 (Build 2)** quanto com a versão mais recente **0.4.21 (Build 2)** disponível oficialmente em 19/08/2026.
 
 Após a instalação, o servidor local deve ser habilitado na aba **Developer** do LM Studio e permanecer ativo durante a execução do benchmark.
 
@@ -927,7 +944,7 @@ Depois, instale as dependências utilizadas pelo benchmark:
 
 ```bash
 python -m pip install --upgrade pip
-pip install -r requirements.txt
+pip install -r benchmark/requirements.txt
 ```
 
 Verifique se o interpretador utilizado pertence ao ambiente virtual:
