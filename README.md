@@ -268,7 +268,7 @@ O artefato pode ser executado em diferentes configurações de hardware, depende
 | Componente | Requisito |
 |------------|-----------|
 | Sistema Operacional | Ubuntu 22.04+ ou Windows 11 (WSL2) |
-| Python | 3.11 ou superior |
+| Python | 3.13.5 |
 | Git | 2.40+ |
 | Docker | 24+ |
 | Docker Compose | 2+ |
@@ -283,7 +283,7 @@ O artefato pode ser executado em diferentes configurações de hardware, depende
 | Componente | Recomendado |
 |------------|-------------|
 | Sistema Operacional | Ubuntu 24.04 LTS |
-| Python | 3.12 |
+| Python | 3.13.5 |
 | RAM | 32 GB |
 | CPU | 8 núcleos ou superior |
 | GPU | NVIDIA ou Intel ARC compatível com aceleração para LLMs |
