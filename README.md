@@ -56,8 +56,7 @@ Este artefato é submetido para avaliação considerando os quatro selos previst
 
 * **Artefatos Disponíveis (SeloD)**;
 * **Artefatos Funcionais (SeloF)**;
-* **Artefatos Sustentáveis (SeloS)**;
-* **Experimentos Reprodutíveis (SeloR)**.
+* **Artefatos Sustentáveis (SeloS)**.
 
 O repositório disponibiliza o código-fonte, a documentação, os scripts de execução, os dados anonimizados, os prompts, os relatórios anonimizados e os recursos necessários para a execução do benchmark. A organização desses componentes foi estruturada de forma a permitir tanto a utilização do artefato quanto a reprodução dos experimentos apresentados no artigo.
 
